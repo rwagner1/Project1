@@ -1,44 +1,59 @@
-# MATLAB Spring 2014 – Research Plan (Template)
-(text between brackets to be removed)
+# MATLAB Spring 2014 – Research Plan
 
-> * Group Name: (be creative!)
-> * Group participants names: (alphabetically sorted by last name)
-> * Project Title: (can be changed)
+> * Group Name: giANTs
+> * Group participants names: Giandrin Barandun, Raphaela Wagner
+> * Project Title: Solving travelling salesman problem using ant colony systems
+
 
 ## General Introduction
 
-(States your motivation clearly: why is it important / interesting to solve this problem?)
-(Add real-world examples, if any)
-(Put the problem into a historical context, from what does it originate? Are there already some proposed solutions?)
+The aim of this project is to analyse the navigation behaviour of ants. This is done by using an artificial ant colony system (ACS)
+to solve the travelling salesman problem (TSP). The information can be used to examine interesting biological questions as 'how do 
+ant colonies find the shortest path from a food source to their nest?' Apart from investigating biological systems the method can also 
+be applied to neural networks and evolutionary computation.
+
 
 ## The Model
 
-(Define dependent and independent variables you want to study. Say how you want to measure them.) (Why is your model a good abtraction of the problem you want to study?) (Are you capturing all the relevant aspects of the problem?)
+The used model consists of a number of artificial ants (agents) which are put randomly and complete tours in the network. The decision of the ant which city 
+to choose next depends on a random parameter as well as on parameters for the distance between the two cities and the amount of 
+pheromone on the edge deposited there by previous ants. For the ant having a memory of the visited cities it will never travel a city
+twice. If an ant uses an edge the amount of pheromone on this edge is lowered to avoid a very strong edge (local trail updating).
+After every turn the shortest found path gets rewarded with more pheromone (global trail updating). Parameters are: the number of ants, 
+weight of length of an edge compared to the amount of pheromone on that edge, influence of the random variable and amount of pheromone change in 
+local and global updating.
 
 
 ## Fundamental Questions
 
-(At the end of the project you want to find the answer to these questions)
-(Formulate a few, clear questions. Articulate them in sub-questions, from the more general to the more specific. )
-
+1. Analyse TSP model
+	a) What is the average tour length obtained with the TSP model?
+	b) Comparison of the results to SA, EN and SOM (from literature)
+	c) Effect on varying the number cities?
+	d) Effect on varying the amount of pheromone?
+2. Using ACS on a lattice
+	a) Analyse the evolution of the colony in an environment with objects (food and obstacles)
+ 
 
 ## Expected Results
 
-(What are the answers to the above questions that you expect to find before starting your research?)
+The simple model taken from the biological ecosystem is expected to rapidly lead to a good solution of the TSP which is at least as good 
+as or even better than those found by other methods like simulated annealing, neural nets, self organizing map or the genetic algorithm.
 
 
 ## References 
 
-(Add the bibliographic references you intend to use)
-(Explain possible extension to the above models)
-(Code / Projects Reports of the previous year)
+- Ant colonies for the travelling salesman problem, Dorigo M.; Gambardella L.M., 1996
+- Trails and U-turns in the selection of a path by the ant Lasius niger, Beckers et al., 1992
+- The self-organising clock pattern of Messor pergandei, Goss et al., 1989
+- Effective heuristic algorithm for the traveling-salesman problem, Lin S.; Kernighan M.W., 1973
+
 
 
 ## Research Methods
 
-(Cellular Automata, Agent-Based Model, Continuous Modeling...) (If you are not sure here: 1. Consult your colleagues, 2. ask the teachers, 3. remember that you can change it afterwards)
-
+Agent-Based Model
 
 ## Other
 
-(mention datasets you are going to use)
+Different TSP-datasets from 'TSPlib'
