@@ -1,3 +1,10 @@
 # Code Folder 
 
-Your code goes here. You could also replace the content of this file with something more meaningful
+
+--------------------------------------------------------------------------
+Zu 'choose_city.m'
+
+k ist input welcher Agent und M_k das Gedächtnis der Agents mit Spalten
+für verschiedene Agents und Zeilen für verschiedene Cities (M_k[city, agent])
+!wobei gilt M_k = 1 heisst nicht besucht!
+--------------------------------------------------------------------------
