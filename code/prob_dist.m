@@ -19,7 +19,7 @@ function [p_k] = prob_dist (tau, M_k, current_city, next_city, no_cities, beta_0
 
     for ii = 1:no_cities
 
-        if M_k(ii) == 0                         %
+        if M_k(ii) == 1                         %
             
 
             if (ii < current_city)

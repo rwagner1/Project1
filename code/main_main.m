@@ -15,7 +15,7 @@ tau = zeros (no_cities) + 0.1;											%tau als pheromenin-matrix mit dimensio
 
 %Berechnen von L_nn, benötigt für tau0
 
-L_nn = calc_Lnn(data_set, no_cities, start_city);								%Function calc_Lnn aufrufen um L_nn zu berechnen
+L_nn = calc_Lnn(data_set, no_cities, start_city)								%Function calc_Lnn aufrufen um L_nn zu berechnen
 tau0 = 1/(no_cities*L_nn);
 
 
@@ -41,7 +41,7 @@ for ii = 1:rounds
         traj_pos = 2;                                                   %die position in der Trajectory matrix
         city_s = current_city;
         
-		while sum(M_k(:, current_agent)) > 0							%Solange es noch unbesuchte Städte gibt
+		while (sum(M_k(:, current_agent)) > 0)							%Solange es noch unbesuchte Städte gibt
 
         
                 
@@ -98,7 +98,9 @@ for ii = 1:rounds
 
 		if current_agent == 1											%Erster Path als shortest setzen														
 			shortest_path = path_length(current_agent);
-		else   															%Für alle weiteren Agents vergleichen
+            shortest_path_index = current_agent;
+            
+        else   															%Für alle weiteren Agents vergleichen
 										
 			if path_length(current_agent) < shortest_path
 
@@ -118,13 +120,12 @@ for ii = 1:rounds
 	%-----------------------------------------------------
 	%Globales Update
 	%-----------------------------------------------------
-    
     tau = global_pheromene_update(trajectory(:, shortest_path_index), tau, shortest_path, no_cities, alpha, start_city );
 
 
 
 end %ii
-
+trajectory(:,shortest_path_index)
 
 		
 

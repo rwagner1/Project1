@@ -3,7 +3,7 @@
 
 function[total_length] = calc_Lnn(data_set, no_cities, start_city)
 
-	longest_distance = max(data_set(1, :))+1;																			%eins mehr als die längste distanz, wird also nie gewählt
+	longest_distance = max(max(data_set))+1;																			%eins mehr als die längste distanz, wird also nie gewählt
 	current_city = 1;
 	city_memory = zeros(no_cities,1);																				%Erinnerung ob wir in einer Stadt schon waren
 	city_memory(start_city) = 1;
