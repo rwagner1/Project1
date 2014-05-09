@@ -17,7 +17,18 @@ addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other')
         delimiterIn = ' ';
         headerlinesIn = 8;
         cities = importdata(filename,delimiterIn,headerlinesIn);
-        data_set = cities.data;                                                %City-Matrix
+        dim_data = length(cities.data);
+        %Neuordnung City-Matrix zu linker unterer Dreiecksmatrix (Einträge
+        %oben rechts)
+        data_set = NaN(dim_data+1);                                      %Initialisieren City-Matrix
+        for ii=1:dim_data
+               for jj=1:dim_data
+                data_set(ii,jj+1) = cities.data(ii,dim_data-jj+1);
+             
+               end
+               
+        end
+           
         
      end
  
@@ -36,5 +47,5 @@ start_city = 1;											%Bei welcher Stadt startet der Agent
 %------------------------
 
 
-mainASP(alpha, beta_0, no_agents, dataset, rounds, start_city);
+%mainASP(alpha, beta_0, no_agents, dataset, rounds, start_city);
 
