@@ -25,4 +25,4 @@ end
 main_initialize_system();
 
 %Teste Funktionen
-
+d = eta(current_city, next_city, data_set);         %Funktioniert
