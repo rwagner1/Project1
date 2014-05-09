@@ -33,13 +33,15 @@ function [city_s] = choose_city (tau, beta0, M_k(:,current_agent), current_city,
 
                end
            end
-     %Bestimme S falls nächste City nicht nach Modell in (1) gewählt wird
+           
+    %Bestimme S falls nächste City nicht nach Modell in (1) gewählt wird
     else
         while (1)
             s0 = floor(rand()*no_cities);               %Generiere Zufallszahl zwischen 1 und no_cities
             p0 = rand();                                %Genierere weitere Zufallszahl um neue Stadt mit Wahrscheinlichkeit p0 anzunehmen
-
-            if (p0 < prob_dist(tau(current_city,:), M_k(:,current_agent), current_city, s0, no_cities, beta0) && M_k(s0, current_agent) == 1)
+            
+            %Agent wählt eine City mit Wahrscheinlichkeit p0, falls er sie noch nicht besucht hat
+            if (p0 < prob_dist(tau, M_k(:,current_agent), current_city, s0, no_cities, beta0) && M_k(s0, current_agent) == 1)       
                 city_s = s0;
                 break;
             end

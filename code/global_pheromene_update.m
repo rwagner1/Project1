@@ -17,9 +17,11 @@ function [tau] = global_pheromene_update(trajectory, tau, shortest_path, no_citi
             else
                 tau(trajectory(ii), trajectory(ii+1)) = (1-alpha)*tau(trajectory(ii),trajectory(ii+1))+alpha/shortest_path;
 
-            end    
+            end  
+            
     end
     
     tau (1, trajectory(no_cities)) = (1-alpha)*tau(1,trajectory(no_cities))+alpha/shortest_path;
+
 end
 

@@ -1,6 +1,6 @@
 %Hauptfunktion zum Wählen der Parameter und einlesen der Matrix mit Daten der Städte und Strecken
 
-%Füge Pfade zu den Datensätzen dazu (ANPASSEN!)
+%Füge Pfade zu den Datensätzen dazu
 %addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
 addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
 
@@ -22,19 +22,15 @@ addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other')
      end
  
 
-
-alpha = 0.1;
-beta_0 = 2;
-no_agents = 10; 										%Wieviele Agents haben wir
-rounds = 10;											%Wieviele DurchgÃ¤nge
-start_city = 1;											%Bei welcher Stadt startet der Agent
-
+%Parameter eintragen
+alpha = 0.1;                                            
+beta = 2;
+q0 = 0.9;
+no_agents = 10; 										
 
 
 %------------------------
 %Starte die Hauptfunktion
 %------------------------
 
-
-mainASP(alpha, beta_0, no_agents, dataset, rounds, start_city);
-
+%mainASP(alpha, beta, no_agents, data_set);
