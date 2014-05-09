@@ -5,10 +5,10 @@
 %Input:     Aktueller und neuer Standort
 %Output:    1/(Distanz der beiden Standorte)
 
-function [distance] = eta(current_city, next_city, no_cities, data_set)
+function [distance] = eta(current_city, next_city, data_set)
        
-    if (next_city > no_cities-current_city+1)
-        distance = 1/data_set(no_cities-next_city, no_cities-current_city);
+    if (next_city < (current_city+1))
+        distance = 1/data_set(next_city, current_city);
     else
         distance = 1/data_set(current_city, next_city);
     end
