@@ -8,7 +8,7 @@ function[total_length] = calc_Lnn(data_set, no_cities)
 	city_memory = zeros(no_cities);																				%Erinnerung ob wir in einer Stadt schon waren
 	city_memory(1) = 1;
 	distances = data_set + data_set' + diag([ones(no_cities,1)])*longest_distance;									%Bildet die komplette Matrix mit überlangen distancen auf der diagonale, damit die nicht gewählt werden
-    total_length = 0;
+
 
 	for ii = 2:no_cities																						%no_cities-1 durchgänge führt zu letzten stadt																						
 
@@ -18,11 +18,11 @@ function[total_length] = calc_Lnn(data_set, no_cities)
 
 		while(test)
 
-			[shortest_length, current_city]=min(distance_vector);												%Gibt als shortest length den kleinsten Eintrag und als current_city die position
+			[shortest_length, current_city]=min(distance_vector);																%Finde die Stadt zu welcher wir als nächstes gehen
 
 			if city_memory(current_city) == 0																	%Falls Stadt noch nicht besucht
 
-				total_length = total_length + shortest_length;									%Distance zu dieser Stadt dazu addieren
+				total_length = total_length + sho;									%Distance zu dieser Stadt dazu addieren
 				test = 0;																						%und aus while-Schleife aussteigen
 				city_memory(current_city) = 1;
 

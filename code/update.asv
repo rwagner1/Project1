@@ -1,4 +1,3 @@
-function [ tau(current_city, city_s), trajectory(time_step_agent,current_agent), M_k(city_s,current_agent) ] = update(tau(current_city, city_s), trajectory(time_step_agent, current_agent), M_k(city_s, current_agent), alpha, tau0)
 %Diese Funktion macht ein Pheromenupdate tau(), Citynummernupdate und
 %M_k()-update nachdem eine nächste Stadt city_s gewählt wurde
 %
@@ -9,6 +8,10 @@ function [ tau(current_city, city_s), trajectory(time_step_agent,current_agent),
 %
 %Output:    Aktualisierte Werte in Matrizen tau(), trajectory(), M_k() and
 %           fixer Stelle
+
+function [ tau(current_city, city_s), trajectory(time_step_agent,current_agent), M_k(city_s,current_agent) ] = 
+            update(tau(current_city, city_s), trajectory(time_step_agent, current_agent), M_k(city_s, current_agent), alpha, tau0)
+
 
     tau(current_city, city_s) = (1-alpha)*tau(current_city, city_s)+alpha*tau0;         %Lokales Pheromenupdate
     trajectory (time_step_agent, current_agent) = city_s;                               %Speichere gewählte Citynummer
