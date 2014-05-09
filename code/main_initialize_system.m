@@ -1,11 +1,12 @@
 %Hauptfunktion zum Wählen der Parameter und einlesen der Matrix mit Daten der Städte und Strecken
 
-%Füge Pfade zu den Datensätzen dazu
+%Füge Pfade zu den Datensätzen dazu (ANPASSEN!)
 %addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
 addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
 
 %Städtedaten einlesen
-%cities.data = links obere Dreiecksmatrix mit Dimension: (no_cities-1) x (no_cities-1)
+%cities.data = links obere Dreiecksmatrix mit Dimension: (no_cities-1) x
+%(no_cities-1) mit Diagonaleinträgen
 
 [filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
      if isequal(filename, 0)
