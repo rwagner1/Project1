@@ -7,7 +7,7 @@
 %
 %Output:    Neu gewählte City s
 
-function [city_s] = choose_city (tau, beta0, M_k, current_city, no_cities, current_agent, q0)
+function [city_s] = choose_city (tau, beta_0, M_k, current_city, no_cities, current_agent, q0, data_set)
 
     q = rand();                                 %Zufallszahl zur Bestimmung ob Model in Gleichung (1) oder nicht
 
@@ -19,11 +19,12 @@ function [city_s] = choose_city (tau, beta0, M_k, current_city, no_cities, curre
            for ii = 1:no_cities
 
                if M_k(ii)                            %Falls city ii von current_agent noch nicht besucht (M_k(ii) = 1)
+                   
                    %Berechne das argument nach Formel (1) im Paper
                    if (current_city > ii)
-                         argument = tau(ii, current_city)*eta(current_city, ii)^beta0;
+                         argument = tau(ii, current_city)*eta(current_city, ii, data_set)^beta_0;
                    else
-                         argument = tau(current_city, ii)*eta(current_city, ii)^beta0;
+                         argument = tau(current_city, ii)*eta(current_city, ii, data_set)^beta_0;
                    end
                    
                    if (argument > comp_arg)              %Falls das Argument das grösste bis jetzt, setze city_s neu
@@ -31,20 +32,27 @@ function [city_s] = choose_city (tau, beta0, M_k, current_city, no_cities, curre
                          comp_arg = argument;
                    end
 
-               end
-           end
+               end %if M_k(ii)
+               
+           end %for ii
+           
+           %nächste Stadt gefunden ----> city_s
            
     %Bestimme S falls nächste City nicht nach Modell in (1) gewählt wird
     else
         while (1)
-            s0 = floor(rand()*no_cities);               %Generiere Zufallszahl zwischen 1 und no_cities
-            p0 = rand();                                %Genierere weitere Zufallszahl um neue Stadt mit Wahrscheinlichkeit p0 anzunehmen
+            s0 = floor(rand()*no_cities)+1;               %Generiere Zufallszahl zwischen 1 und no_cities, floor generiert zwischen 0 und no_cites-1, deshalb +1
+            p0 = rand();                                  %Genierere weitere Zufallszahl um neue Stadt mit Wahrscheinlichkeit p0 anzunehmen
             
             %Agent wählt eine City mit Wahrscheinlichkeit p0, falls er sie noch nicht besucht hat
-            if (p0 < prob_dist(tau, M_k(:,current_agent), current_city, s0, no_cities, beta0) && M_k(s0, current_agent) == 1)       
+            if (M_k(s0) == 1 && p0 < prob_dist(tau, M_k, current_city, s0, no_cities, beta_0, data_set))       
                 city_s = s0;
-                break;
+                break;                                      %Stadt city_s wurde gewählt
+                
             end
+            
+            %nächste Stadt gefunden -----> city_s
+            
         end %end while
     end%end if else
 end%end function

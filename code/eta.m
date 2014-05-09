@@ -7,10 +7,11 @@
 
 function [distance] = eta(current_city, next_city, data_set)
        
-    if (next_city < (current_city+1))
-        distance = 1/data_set(next_city, current_city);
-    else
+
+    if (next_city > current_city)
         distance = 1/data_set(current_city, next_city);
+    else
+        distance = 1/data_set(next_city, current_city);
     end
 end
 
