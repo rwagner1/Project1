@@ -7,7 +7,7 @@
 %           Matrix tau, Länge der kürzesten Tour, Anzahl Städte, Parameter
 %Output:    Aktuelle Pheromenwerte in tau
 
-function [tau] = global_pheromene_update(trajectory, tau, shortest_path, no_cities, alpha )
+function [tau] = global_pheromene_update(trajectory, tau, shortest_path, no_cities, alpha, start_city )
 
     for ii = 1:no_cities-1
 
@@ -21,7 +21,12 @@ function [tau] = global_pheromene_update(trajectory, tau, shortest_path, no_citi
             
     end
     
-    tau (1, trajectory(no_cities)) = (1-alpha)*tau(1,trajectory(no_cities))+alpha/shortest_path;
+    %Nach hause weg mit pheranomin versorgen
+    if start_city < trajectory(no_cities)
+        tau (start_city, trajectory(no_cities)) = (1-alpha)*tau(start_city,trajectory(no_cities))+alpha/shortest_path;
+    else
+        tau (trajectory(no_cities), start_city) = (1-alpha)*tau(trajectory(no_cities), start_city)+alpha/shortest_path;
+
 
 end
 
