@@ -7,7 +7,7 @@
 %
 %Output:    Neu gewählte City s
 
-function [city_s] = choose_city (tau, beta0, M_k(:,current_agent), current_city, no_cities, current_agent, q0)
+function [city_s] = choose_city (tau, beta0, M_k, current_city, no_cities, current_agent, q0)
 
     q = rand();                                 %Zufallszahl zur Bestimmung ob Model in Gleichung (1) oder nicht
 
@@ -46,7 +46,7 @@ function [city_s] = choose_city (tau, beta0, M_k(:,current_agent), current_city,
                 break;
             end
         end %end while
-    end%end else
-end%end if
+    end%end if else
+end%end function
   
      

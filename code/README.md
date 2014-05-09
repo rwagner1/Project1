@@ -2,7 +2,7 @@
 --------------------------------------------------------------------------
 allgemeine Info
 
-tau ist upper triangle matrix, das heisst die "höhere" Stadt muss an zweiter Stelle stehen
+tau ist lower triangle matrix, das heisst die "höhere" Stadt muss an zweiter Stelle stehen
 
 --------------------------------------------------------------------------
 Zu 'choose_city.m'

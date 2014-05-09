@@ -47,5 +47,6 @@ start_city = 1;											%Bei welcher Stadt startet der Agent
 %------------------------
 
 
-%mainASP(alpha, beta_0, no_agents, dataset, rounds, start_city);
+
+main_main(alpha, beta_0, no_agents, dataset, rounds, start_city);
 

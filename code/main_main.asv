@@ -1,7 +1,7 @@
 %Hauptfunktion
 %Bekommt Parameter von main_initialize_system und gibt ???? aus
 
-function[path_length]= mainASP(alpha, beta_0, no_agents, data_set, rounds)
+function[path_length]= main_main(alpha, beta_0, no_agents, data_set, rounds, q0)
 
 
 
@@ -16,12 +16,13 @@ tau = zeros (no_cities);											%tau als pheromenin-matrix mit dimension no_c
 %Berechnen von L_nn, ben√∂tigt f√ºr tau0
 
 L_nn = calc_Lnn(data_set, no_cities);								%Function calc_Lnn aufrufen um L_nn zu berechnen
-tau0 = 1/(no_cities*L_nn)
+tau0 = 1/(no_cities*L_nn);
 
 
 
 start_city = 1; 													%Agent startet bei erster Stadt
-current_city = start_city;
+M_k(start_city, :) = 0;                                             %Memory f¸r Startcity auf "besucht"
+
 
 
 %-------------------------------------------------------------------------------
@@ -30,20 +31,42 @@ current_city = start_city;
 
 
 for ii = 1:rounds
-
+    
+    path_length = zeros(no_agents,1);
+    trajectory = ones(no_cities, no_agents)*start_city                  %Matrix mit nummer der Startstadt auf allen positionen
+    
 
 	for current_agent = 1:no_agents
+        
+        current_city = start_city;                                      %Startstadt bekannt geben
+        traj_pos = 2;                                                   %die position in der Trajectory matrix
 
 		while sum(M_k(:, current_agent)) > 0							%Solange es noch unbesuchte St√§dte gibt
 
-			sadfasarghdfjfgjdrsrg
+			city_s = choose_city(tau,beta0, M_k(:,current_agent), current_city, no_cities, current_agent, q0);              %W‰hle eine Stadt
+            M_k(city_s, current_agent) = 0;                                                                                 %Memory dass stadt city_s besucht wurde
+            
+            %---------------pfadl‰nge-------------------
+            if current_city < city_s
+                
+                path_length(current_agent) = path_length(current_agent) + data_set(current_city, city_s);
+                
+            else
+                
+                path_length(current_agent) = path_length(current_agent) + data_set(city_s, current_city);
+                
+            end
+            %--------------------------------------------
+            
+            trajectory(traj_pos, current_agent) = city_s;                                               %Trajectorymatrix updaten
+            traj_pos = traj_pos + 1;                                                                    %n‰chste Position f¸r n‰chsten durchgang
 
-		end
+        end  %while
 
 		path_length(current_agent) = path_length(current_agent) + data_set(current_city, start_city);						%Weg nach Hause dazu addieren
 		M_k(:, current_agent) = 1;																							%Die Memory auf Anfang setzten
 
-		tau(start_city, current_city) = (1-alpha)*tau(start_city, current_city)+alpha*tau0;									%Pheromaninupdate
+		tau(start_city, current_city) = (1-alpha)*tau(start_city, current_city)+alpha*tau0;									%Pheromaninupdate f¸r nachhause weg
 
 		%------------------------
 		%Finde shortest path
@@ -65,15 +88,17 @@ for ii = 1:rounds
 
 		%------shortest path gefunden-------------
 
-	end  %current_agent
+	end  %current_agent ------ Wir haben Shortest_path gefunden und den Agent, der ihn machte (f¸r trajectory benˆtigt)
 
 	%-----------------------------------------------------
 	%Globales Update
 	%-----------------------------------------------------
+    
+    tau = global_pheromene_update(trajectory(:, shortest_path_index), tau, shortest_path, no_cities, alpha )
 
-end
 
 
+end %ii
 
 
 		
