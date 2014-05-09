@@ -5,12 +5,12 @@
 %         Indem Variablen innerhalb einer Funktion als global definiert werden (z.b. 'global X') 
 %         entfällt mehrfaches einlesen.
 %
-%Input:   Ganze Pheromen-Matrix und nicht nur Vektor für aktuelle Stadt, da nur Dreiecksmatrix, Vektor aus Memory-Matrix für aktuellen
+%Input:   Ganze Pheromen-Matrix und nicht nur Vektor für aktuelle Stadt, da nur Dreiecksmatrix, !!!Vektor!!! aus Memory-Matrix für aktuellen
 %         Agenten, Funktion eta = 1/(distance cities), aktueller Standort,
 %         nächster Standort, totale Anzahl Cities, Parameter
 %Output:  Wahrscheinlichkeit p_k mit welcher eine neue Stadt gewählt wird
 
-function [p_k] = prob_dist (tau, M_k(:,current_agent), current_city, next_city, no_cities, beta0)
+function [p_k] = prob_dist (tau, M_k, current_city, next_city, no_cities, beta_0)
     
    
     %Bilde eine Summe des Gewichts aller noch nicht besuchten Städte
@@ -21,10 +21,10 @@ function [p_k] = prob_dist (tau, M_k(:,current_agent), current_city, next_city, 
         if M_k(ii)
             
             if (current_city > ii)
-                summe = summe + tau(ii, current_city)*eta(current_city, ii)^beta0;
+                summe = summe + tau(ii, current_city)*eta(current_city, ii)^beta_0;
                
             else
-                summe = summe + tau(current_city, ii)*eta(current_city, ii)^beta0;
+                summe = summe + tau(current_city, ii)*eta(current_city, ii)^beta_0;
                 
             end
         end
@@ -35,11 +35,13 @@ function [p_k] = prob_dist (tau, M_k(:,current_agent), current_city, next_city, 
       if M_k(next_city)
           
           if (current_city > next_city)
-              p_k = (tau(next_city, current_city)*eta(current_city, next_city)^beta0)/summe;
+              p_k = (tau(next_city, current_city)*eta(current_city, next_city)^beta_0)/summe;
 
           else    
-              p_k = (tau(current_city, next_city)*eta(current_city, next_city)^beta0)/summe;
+              p_k = (tau(current_city, next_city)*eta(current_city, next_city)^beta_0)/summe;
            
+          end
+          
       else
            p_k = 0;
            
