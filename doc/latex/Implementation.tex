@@ -7,3 +7,7 @@ When all rounds have been calculated the function gives the shortest path found 
 
 \subsection{Choose the Next City}
 
+To choose which city the ant will go next two different methods are implemented according to the paper and one of them is selected based on a certain probability. \\
+The first way to decide which city to go next is to optimize a function which depends on the amount of pheromone on the edge between the current city and the chosen one and its length. This method chooses the edge with the highest amount of pheromone and the shortest length whereas there are parameters to weight these two variables relatively to each other. \\
+On the other hand a probability was assigned to every unvisited city again depending on the amount of pheromone and the length of the edge between the cities. Then a city was randomly chosen and accepted or rejected with its assigned probability.\\
+At the end the function \textit{choose\_city.m} gives the number of the next city to visit back to the main function.
