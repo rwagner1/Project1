@@ -61,8 +61,8 @@ close all
  
 alpha = 0.1;
 beta_0 = 2;
-no_agents = 10; 										%Wieviele Agents haben wir
-rounds = 4820;											%Wieviele Durchgänge
+no_agents = 30; 										%Wieviele Agents haben wir
+rounds = 400;											%Wieviele Durchgänge
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
 
