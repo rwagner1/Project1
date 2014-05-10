@@ -90,7 +90,7 @@ for ii = 1:rounds
         
         
 		M_k(:, current_agent) = 1;																							%Die Memory auf Anfang setzten
-
+        M_k(1, current_agent) = 0;
 
 		%------------------------
 		%Finde shortest path
