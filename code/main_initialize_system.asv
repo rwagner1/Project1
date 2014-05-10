@@ -9,6 +9,7 @@
 %(no_cities-1) mit Diagonaleintr‰gen
 
 
+%Citydaten einlesen (2D euklidische Distanzen) 
 [filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
      if isequal(filename, 0)
         disp('User selected ''Cancel''')
@@ -24,28 +25,55 @@
         data_set = zeros(dim_data+1);                                      %Initialisieren City-Matrix
         for ii=1:dim_data
                for jj=1:dim_data
-                    data_set(ii,jj+1) = cities.data(ii,dim_data-jj+1);
-                    
-            
+                    data_set(ii,jj+1) = cities.data(ii,dim_data-jj+1);           
                 
                end
                
         end
+        
+        zero_nan = isnan(data_set);
+        data_set(zero_nan)=0;
         data_set   
         
      end
 
-ii=isnan(test);
-test(ii)=0;
 
 
-U = triu(magic(30));
-data_set =  U-diag(diag(U))
 
+%Citydaten einlesen (obere linke Dreiecksmatrix, zb city bayg29)
+% [filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
+%      if isequal(filename, 0)
+%         disp('User selected ''Cancel''')
+%         
+%      else
+%         disp(['User selected ', fullfile(pathname, filename)])
+%         delimiterIn = ' ';
+%         headerlinesIn = 8;
+%         cities = importdata(filename,delimiterIn,headerlinesIn);
+%         dim_data = length(cities.data);
+%         %Neuordnung City-Matrix zu linker unterer Dreiecksmatrix (Eintr‰ge
+%         %oben rechts)
+%         data_set = zeros(dim_data+1);                                      %Initialisieren City-Matrix
+%         for ii=1:dim_data
+%                for jj=1:dim_data
+%                     data_set(ii,jj+1) = cities.data(ii,dim_data-jj+1);           
+%                 
+%                end
+%                
+%         end
+%         
+%         zero_nan = isnan(data_set);
+%         data_set(zero_nan)=0;
+%         data_set   
+%         
+%      end
+
+     
+ 
 alpha = 0.1;
 beta_0 = 2;
-no_agents = 10; 										%Wieviele Agents haben wir
-rounds = 1;											%Wieviele Durchg√§nge
+no_agents = 20; 										%Wieviele Agents haben wir
+rounds = 200;											%Wieviele Durchg√§nge
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
 
@@ -59,5 +87,6 @@ q0 = 0.9;
 
 shortest_path = main_main(alpha, beta_0, no_agents, data_set, rounds, start_city, q0);
 shortest_path
+
 
 
