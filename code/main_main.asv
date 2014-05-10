@@ -11,13 +11,13 @@ no_cities = length (data_set(:,1));									%LÃ¤nge der ersten Spalte der Matrix
 %Memory der Ameise, Matrix mit Anzahl StÃ¤dten x Anzahl Agents
 %1 heisst noch nicht besucht.
 M_k = ones(no_cities, no_agents);
-tau = zeros (no_cities);											%tau als pheromenin-matrix mit dimension no_cities x no_cities, zu beginn alles null
+tau = zeros (no_cities) + 0.1;											%tau als pheromenin-matrix mit dimension no_cities x no_cities, zu beginn alles null
 
 %Berechnen von L_nn, benÃ¶tigt fÃ¼r tau0
 
-L_nn = calc_Lnn(data_set, no_cities, start_city);								%Function calc_Lnn aufrufen um L_nn zu berechnen
+L_nn = calc_Lnn(data_set, no_cities, start_city)						%Function calc_Lnn aufrufen um L_nn zu berechnen
 tau0 = 1/(no_cities*L_nn);
-
+global_shortest_path = L_nn;                                        %Globaler shortest_path = shortest_path falls nach bestimmter Runde kleiner geworden
 
 
 M_k(start_city, :) = 0;                                             %Memory für Startcity auf "besucht"
@@ -40,23 +40,14 @@ for ii = 1:rounds
         current_city = start_city;                                      %Startstadt bekannt geben
         traj_pos = 2;                                                   %die position in der Trajectory matrix
         city_s = current_city;
-        M_k
-		while sum(M_k(:, current_agent)) > 0							%Solange es noch unbesuchte StÃ¤dte gibt
+        
+		while (sum(M_k(:, current_agent)) > 0)							%Solange es noch unbesuchte StÃ¤dte gibt
 
-            if (current_agent == 1 && ii ==1)
-                    
-            
-                while start_city == city_s
-                    
-                    city_s = randi([1,no_cities]);
-                    
-                end % while
+        
                 
-            else          
-                
-                city_s = choose_city(tau, beta_0, M_k(:,current_agent), current_city, no_cities, current_agent, q0, data_set);              %Wähle eine Stadt
+            city_s = choose_city(tau, beta_0, M_k(:,current_agent), current_city, no_cities, current_agent, q0, data_set);              %Wähle eine Stadt
             
-            end % if else
+ 
             
             M_k(city_s, current_agent) = 0; %Memory dass stadt city_s besucht wurde
             
@@ -99,7 +90,7 @@ for ii = 1:rounds
         
         
 		M_k(:, current_agent) = 1;																							%Die Memory auf Anfang setzten
-
+        M_k(1, current_agent) = 0;
 
 		%------------------------
 		%Finde shortest path
@@ -107,7 +98,9 @@ for ii = 1:rounds
 
 		if current_agent == 1											%Erster Path als shortest setzen														
 			shortest_path = path_length(current_agent);
-		else   															%FÃ¼r alle weiteren Agents vergleichen
+            shortest_path_index = current_agent;
+            
+        else   															%FÃ¼r alle weiteren Agents vergleichen
 										
 			if path_length(current_agent) < shortest_path
 
@@ -124,16 +117,18 @@ for ii = 1:rounds
 
 	end  %current_agent ------ Wir haben Shortest_path gefunden und den Agent, der ihn machte (für trajectory benötigt)
 
+    if 
 	%-----------------------------------------------------
 	%Globales Update
 	%-----------------------------------------------------
-    
     tau = global_pheromene_update(trajectory(:, shortest_path_index), tau, shortest_path, no_cities, alpha, start_city );
 
 
-
+    if mod(ii,20) == 0                          %Ausgabe shortest_path nach jeder 20. round
+       shortest_path
+        
 end %ii
-
+trajectory(:,shortest_path_index)
 
 		
 

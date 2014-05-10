@@ -1,7 +1,7 @@
 %Hauptfunktion
 %Bekommt Parameter von main_initialize_system und gibt ???? aus
 
-function[shortest_path]= main_main(alpha, beta_0, no_agents, data_set, rounds, start_city, q0)
+function[shortest_path]= main_main(alpha, beta_0, no_agents, data_set, rounds, start_city, q0, tau_init)
 
 
 
@@ -11,17 +11,15 @@ no_cities = length (data_set(:,1));									%LÃ¤nge der ersten Spalte der Matrix
 %Memory der Ameise, Matrix mit Anzahl StÃ¤dten x Anzahl Agents
 %1 heisst noch nicht besucht.
 M_k = ones(no_cities, no_agents);
-tau = zeros (no_cities) + 0.1;											%tau als pheromenin-matrix mit dimension no_cities x no_cities, zu beginn alles null
+tau = zeros (no_cities) + tau_init;											%tau als pheromenin-matrix mit dimension no_cities x no_cities, zu beginn alles null
 
 %Berechnen von L_nn, benÃ¶tigt fÃ¼r tau0
 
-L_nn = calc_Lnn(data_set, no_cities, start_city)								%Function calc_Lnn aufrufen um L_nn zu berechnen
+L_nn = calc_Lnn(data_set, no_cities, start_city)						%Function calc_Lnn aufrufen um L_nn zu berechnen
 tau0 = 1/(no_cities*L_nn);
 
-
-
 M_k(start_city, :) = 0;                                             %Memory für Startcity auf "besucht"
-
+global_shortest_path = L_nn;                                        %Globaler shortest_path vergleicht shortest_path's von allen gegangenen rounds
 
 
 %-------------------------------------------------------------------------------
@@ -31,9 +29,10 @@ M_k(start_city, :) = 0;                                             %Memory für 
 
 for ii = 1:rounds
     
-    path_length = zeros(no_agents,1);                                    %Vektor mit länge für agents und gefüllt mit null
-    trajectory = ones(no_cities, no_agents)*start_city;                  %Matrix mit nummer der Startstadt auf allen positionen
-    
+    path_length = zeros(no_agents,1);                                   %Vektor mit länge für agents und gefüllt mit null
+    trajectory = ones(no_cities, no_agents)*start_city;                 %Matrix mit nummer der Startstadt auf allen positionen
+  
+
 
 	for current_agent = 1:no_agents
         
@@ -117,15 +116,20 @@ for ii = 1:rounds
 
 	end  %current_agent ------ Wir haben Shortest_path gefunden und den Agent, der ihn machte (für trajectory benötigt)
 
+   
 	%-----------------------------------------------------
 	%Globales Update
 	%-----------------------------------------------------
     tau = global_pheromene_update(trajectory(:, shortest_path_index), tau, shortest_path, no_cities, alpha, start_city );
-
-
-
+    
+    if shortest_path < global_shortest_path           %Falls neue kürzeste Tour gefunden wurde, aktualisiere global_shortest_path
+        global_shortest_path = shortest_path;
+    end
+    
+    if mod(ii,50) == 0                          %Ausgabe global_shortest_path nach jeder 20. round
+       global_shortest_path
+    end
+    
 end %ii
-trajectory(:,shortest_path_index)
-
-		
+global_shortest_path
 
