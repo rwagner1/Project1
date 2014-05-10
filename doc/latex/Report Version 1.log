@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.29)  10 MAY 2014 15:06
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.29)  10 MAY 2014 16:17
 entering extended mode
 **Report*Version*1.tex
 
@@ -318,27 +318,41 @@ oose[]city.m", "main[]initialize[]system.m",
  []
 
 
+(C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Description
+.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+
+ []
+
+[4]) [5]
 (C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Implementat
-ion.tex [4]) [5] [6]
+ion.tex) [6] [7]
 ("C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Report Ver
 sion 1.aux") ) 
 Here is how much of TeX's memory you used:
- 3212 strings out of 493921
- 43682 string characters out of 3144867
- 108262 words of memory out of 3000000
- 6452 multiletter control sequences out of 15000+200000
+ 3221 strings out of 493921
+ 43939 string characters out of 3144867
+ 106310 words of memory out of 3000000
+ 6458 multiletter control sequences out of 15000+200000
  12457 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  42i,10n,26p,839b,254s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb
->
-Output written on "Report Version 1.pdf" (6 pages, 98123 bytes).
+mex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+i12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on "Report Version 1.pdf" (7 pages, 171649 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
+ 81 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

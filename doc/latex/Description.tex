@@ -1,0 +1,27 @@
+In this model a number of $k$ ants is sent on a network of $m$ cities with every ant starting at the same city. The next ant only starts when the previous ant has finished its tour which means there never are two ants in the network. \\
+\subsection{Choosing a City}
+Before moving on to the next city an ant has to decide where it wants to go. For this purpose it chooses randomly a number $q$ between zero and one and if this number is smaller or equal than a certain parameter $q_0$ ($q \leqslant q_0$) looks for the city $s$ which fulfils the following formula:
+\begin{equation}
+s = \text{arg max}\{[\tau (r,u)] \cdot [\eta (r,u)]^{\beta}\}, \hspace{2cm} u \not\in M_k.
+\label{eq:qsmallerq0}
+\end{equation}
+The current city where the ant stays is denoted by $r$ and only cities can be chosen which are not yet in the ants memory $M_k$ which means the ant has not visited these cities. The matrix $\tau$ stores the information about the amount of pheromone on the edge between city $r$ and city $u$ and the function $\eta$ gives the inverse of the distance between the two cities. \\
+If the random number is bigger than $q_0$ ($q > q_0$) then the ant randomly chooses one of the remaining unvisited cities and accepts or rejects it according to the probability $p_k$:
+\begin{equation}
+p_k (r,s) = \frac{[\tau (r,s)] \cdot [\eta (r,s)]^{\beta}}{\sum_{u \not\in M_k}[\tau (r,u)] \cdot [\eta (r,u)]^{\beta}}
+\label{eq:prob}
+\end{equation}
+This probability basically contains the same formula of $\tau$ and $\eta$ as the one above but is now normalized with the sum over these relations of every unvisited city. One can clearly see that in the beginning the sum is big and the probabilities are small but favouring the edges with more pheromone and lower distance. At the end when only one city is left the sum equals the term in the nominator and the probability becomes one for the last remaining city.
+\subsection{Moving Forward and Updating}
+Once the city has been chosen the ant moves along the edge and the pheromone on the path is updated according to:
+\begin{equation}
+\tau (r,s) = (1-\alpha)\cdot \tau(r,s) + \alpha \tau_0
+\label{eq:loctauupdate}
+\end{equation}
+The newly introduced parameters $\alpha$ and $\tau_0$ are explained in chapter \ref{sec:results}. This update reduces the amount of pheromone on the chosen edge and helps avoiding very strong edges which would be taken by all the ants. \\
+At the time the first ant has finished the tour the second one can start while the first ant still keeps in mind the trajectory of its tour which means the sequence of the city it has visited and the length of its tour but deletes its memory such that it is ready for a new tour. When all ants have completed one tour the shortest one is rewarded with pheromone according to the formula:
+\begin{equation}
+\tau(r,s) = (1-\alpha)\cdot \tau(r,s) + \alpha \Delta \tau(r,s)
+\label{eq:globalupdate}
+\end{equation}
+This update is intended to give the edges along the shortest path a little head start in the following round. With this step the first round is complete and the second round can start.
