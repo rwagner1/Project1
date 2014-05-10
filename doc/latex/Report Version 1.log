@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.29)  10 MAY 2014 16:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.29)  10 MAY 2014 16:37
 entering extended mode
 **Report*Version*1.tex
 
@@ -318,25 +318,53 @@ oose[]city.m", "main[]initialize[]system.m",
  []
 
 
+(C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Introductio
+n.tex [4] <ants.png, id=21, 420.82219pt x 282.30469pt>
+File: ants.png Graphic file (type png)
+ <use ants.png>
+Package pdftex.def Info: ants.png used on input line 9.
+(pdftex.def)             Requested size: 312.98315pt x 170.71947pt.
+
+
+Package natbib Warning: Citation `paper' on page 5 undefined on input line 15.
+
+
+Package natbib Warning: Citation `paper' on page 5 undefined on input line 16.
+
+
+Package natbib Warning: Citation `paper' on page 5 undefined on input line 16.
+
+)
+Overfull \hbox (9.02892pt too wide) in paragraph at lines 15--99
+\OT1/cmr/m/n/12 (\OT1/cmr/m/it/12 http://www.iwr.uni-heidelberg.de/groups/comop
+t/software/TSPLIB95/tsp/\OT1/cmr/m/n/12 ) and cor-
+ []
+
+[5 <C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/doc/latex/ants.png
+>]
 (C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Description
 .tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
-[4]) [5]
+[6])
 (C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Implementat
-ion.tex) [6] [7]
+ion.tex [7])
+
+Package natbib Warning: There were undefined citations.
+
+[8]
 ("C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Report Ver
 sion 1.aux") ) 
 Here is how much of TeX's memory you used:
- 3221 strings out of 493921
- 43939 string characters out of 3144867
- 106310 words of memory out of 3000000
- 6458 multiletter control sequences out of 15000+200000
+ 3233 strings out of 493921
+ 44203 string characters out of 3144867
+ 107318 words of memory out of 3000000
+ 6465 multiletter control sequences out of 15000+200000
  12457 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 42i,10n,26p,839b,254s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,10n,26p,965b,276s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
@@ -350,9 +378,9 @@ gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files 
 (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "Report Version 1.pdf" (7 pages, 171649 bytes).
+Output written on "Report Version 1.pdf" (8 pages, 209548 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
+ 85 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

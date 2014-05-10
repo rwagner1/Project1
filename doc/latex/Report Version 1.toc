@@ -3,12 +3,12 @@
 \contentsline {subsection}{\numberline {2.1}Raphaela Wagner}{4}
 \contentsline {subsection}{\numberline {2.2}Giandrin Barandun}{4}
 \contentsline {section}{\numberline {3}Introduction and Motivations}{4}
-\contentsline {section}{\numberline {4}Description of the Model}{4}
-\contentsline {subsection}{\numberline {4.1}Choosing a City}{5}
-\contentsline {subsection}{\numberline {4.2}Moving Forward and Updating}{5}
-\contentsline {section}{\numberline {5}Implementation}{6}
-\contentsline {subsection}{\numberline {5.1}Main program}{6}
-\contentsline {subsection}{\numberline {5.2}Choose the Next City}{6}
-\contentsline {section}{\numberline {6}Simulation Results and Discussion}{7}
-\contentsline {section}{\numberline {7}Summary and Outlook}{7}
-\contentsline {section}{\numberline {8}References}{7}
+\contentsline {section}{\numberline {4}Description of the Model}{6}
+\contentsline {subsection}{\numberline {4.1}Choosing a City}{6}
+\contentsline {subsection}{\numberline {4.2}Moving Forward and Updating}{7}
+\contentsline {section}{\numberline {5}Implementation}{7}
+\contentsline {subsection}{\numberline {5.1}Main program}{7}
+\contentsline {subsection}{\numberline {5.2}Choose the Next City}{8}
+\contentsline {section}{\numberline {6}Simulation Results and Discussion}{8}
+\contentsline {section}{\numberline {7}Summary and Outlook}{8}
+\contentsline {section}{\numberline {8}References}{8}
