@@ -12,28 +12,29 @@ rm(list = ls())
 #Daten einlesen
 rounds = c(200,400,600,800,1000,1200,1400,1600,1800,2000)
 shortest_path_average = c(614.2477,501.2961,491.6939, 465.4633,0,0,0,0,0,0)
-global_shortest_path_average.V1 = c(507.3012,459.8245,447.2501,0,0,0,0,0,0,0)
-global_shortest_path_average.V2 = c(507.3012,459.8245,447.2501,0,0,0,0,0,0,0)
-errors.V1 = c(10.4641,8.8395,4.8312,1,1,1,1,1,1,1)                        #Standardabweichung
-errors.V2 = c()
+global_shortest_path_average.V1 = c(507.3012,459.8245,447.2501,441.1628,439.9362,439.8524,438.3222, 435.6396,434.1927, 433.4670)
+global_shortest_path_average.V2 = c(505.4319,460.0544,442.8916,442.4961,439.4602,436.5999,436.5504,435.9685, 434.4450,433.6548)
+errors.V1 = c(10.4641,8.8395,4.8312,6.1660,3.3879,2.9796,3.3960,3.3416,2.6631,2.8202)                        #Standardabweichung
+errors.V2 = c(10.7538,8.7496,6.1061,6.9268,3.9622,3.2160,2.7375,3.0823, 2.5062,3.1934)
 
 #Grafik
 par(family="serif",oma=c(0,1,0,0),mgp=c(2.9,1,0),mar=c(4,4.9,1,1),cex.lab=1.1,cex=1.2)
-plot(rounds,global_shortest_path_average,type="n",
+plot(rounds,global_shortest_path_average.V1,type="n",
      xlim=c(50,2100),
-     ylim=c(400,700),
+     ylim=c(400,550),
      xlab=expression(paste("rounds"," / ", a.u.)),
      ylab=expression(paste("<shortest path>"," / ", a.u.)),
    
 )
 y.errorbars.V1 <- function(rounds,global_shortest_path_average.V1,errors.V1,ebl=0.02){arrows(rounds,global_shortest_path_average.V1-errors.V1,rounds,global_shortest_path_average.V1+errors.V1,code=3,angle=90,length=ebl)}
-y.errorbars.V1(rounds,global_shortest_path_average.V1,errors.V2)
-y.errorbars.V2 <- function(rounds,global_shortest_path_average.V2,errors.V2,ebl=0.02){arrows(rounds,global_shortest_path_average.V2-errors,rounds,global_shortest_path_average.V2+errors.V2,code=3,angle=90,length=ebl)}
-y.errorbars.V2(rounds,global_shortest_path_average.V2,errors.V2)
-points(rounds,global_shortest_path_average.V1,cex=1,pc=21,bg="white")
-points(rounds,global_shortest_path_average.V2,cex=1,pc=21,bg="red")
+y.errorbars.V1(rounds,global_shortest_path_average.V1,errors.V1)
 
-legend(1600,680,c(expression(paste(alpha," = ",0.1)),expression(paste(beta," = ",2)),expression(paste(no_agents," = ",10)),expression(paste(q0," = ",0.9)),expression(paste(tau_init," = ",0.1)),expression(paste(L_nn," = ",513.61))))
+y.errorbars.V2 <- function(rounds,global_shortest_path_average.V2,errors.V2,ebl=0.02){arrows(rounds,global_shortest_path_average.V2-errors.V2,rounds,global_shortest_path_average.V2+errors.V2,code=3,angle=90,length=ebl)}
+y.errorbars.V2(rounds,global_shortest_path_average.V2,errors.V2)
+points(rounds,global_shortest_path_average.V1,cex=0.7,pc=21,bg="white")
+points(rounds,global_shortest_path_average.V2,cex=0.7,pc=21,bg="red")
+
+legend(1600,550,c(expression(paste(alpha," = ",0.1)),expression(paste(beta," = ",2)),expression(paste(no_agents," = ",10)),expression(paste(q0," = ",0.9)),expression(paste(tau_init," = ",0.1)),expression(paste(L_nn," = ",513.61))))
 
 
 #dev.copy2pdf(file="rounds_vs_shortestpath.pdf",height=7,width=12)

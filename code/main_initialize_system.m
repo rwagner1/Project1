@@ -62,11 +62,11 @@ close all
 alpha = 0.1;
 beta_0 = 2;
 no_agents = 10; 										%Wieviele Agents haben wir
-rounds = 1800;											%Wieviele Durchgänge
+rounds = 4000;											%Wieviele Durchgänge
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
 tau_init = 0.1;                                         %Pheromonmenge am Anfang
-
+V = 1;
 
 %------------------------
 %Starte die Hauptfunktion
@@ -82,6 +82,7 @@ errors = zeros(runs,1);
 for ii=1:runs
     global_shortest_path(ii) = main_main(alpha, beta_0, no_agents, data_set, rounds, start_city, q0, tau_init);
 end
+V
 rounds
 global_shortest_path
 global_shortest_path_average = sum(global_shortest_path)/runs           %Gemittelter shortest_path

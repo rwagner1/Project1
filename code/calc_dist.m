@@ -29,7 +29,7 @@ function[opt_path] = calc_dist()
         
         zero_nan = isnan(data_set);
         data_set(zero_nan)=0;
-        data_set   
+        data_set;   
         
      end
 
