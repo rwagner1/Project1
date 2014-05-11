@@ -6,8 +6,24 @@
 %OUTPUT: Distanzmatrix
 
 
-function[data_set] = coordinates(koordinaten)
+function[data_set] = coordinates()
 
+[filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
+     if isequal(filename, 0)
+        disp('User selected ''Cancel''')
+        
+     else
+        disp(['User selected ', fullfile(pathname, filename)])
+        delimiterIn = ' ';
+        headerlinesIn = 6;
+        cities = importdata(filename,delimiterIn,headerlinesIn);
+        koordinaten = cities.data;
+
+       
+     end
+
+
+     
 	no_cities = length (koordinaten);
 	data_set = zeros(no_cities);
 
@@ -20,6 +36,8 @@ function[data_set] = coordinates(koordinaten)
 		end %for jj
 
 	end %for haupt
-
+    
+    data_set;
+    
 end
 

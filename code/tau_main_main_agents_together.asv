@@ -1,7 +1,7 @@
 %Hauptfunktion
 %alle agents werden zu Beginn zufällig auf Städte verteilt und bewegen sich dann gleichzeitig Schritt für Schritt
 
-function[global_shortest_path, tau_bild]= main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init)
+function[global_shortest_path]= main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init)
 
 
 
@@ -129,9 +129,12 @@ for ii = 1:rounds
 	%-----------------------------------------------------
 	%Globales Update
 	%-----------------------------------------------------
-    tau = global_pheromene_update_2(trajectory(:, shortest_path_index), tau, shortest_path, no_cities, alpha, trajectory(1, shortest_path_index) );
+    tau = global_pheromene_update(trajectory(:, shortest_path_index), tau, shortest_path, no_cities, alpha, trajectory(1, shortest_path_index) );
+    
     %-----------------------------------------------------
-
+    
+    tau_bild = tau;
+    %surf(tau_bild)
 
     %Vergleiche den kürzesten Pfad dieser Runde mit dem kürzesten Pfad von allen    
     if shortest_path < global_shortest_path 
@@ -150,5 +153,5 @@ for ii = 1:rounds
     
 end %for ii, über die rounds
 global_shortest_path;
-trajectory(:, shortest_path_index);
-    tau_bild = tau;
+
+

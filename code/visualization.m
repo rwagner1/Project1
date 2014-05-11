@@ -2,25 +2,29 @@
 %cities.data = links obere Dreiecksmatrix mit Dimension: (no_cities-1) x
 %(no_cities-1) mit Diagonaleinträgen
 
-clear all
-clc
-close all
+addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
+
+
+
 
 %Citydaten einlesen (2D euklidische Distanzen) 
-[filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
-     if isequal(filename, 0)
-        disp('User selected ''Cancel''')
-        
-     else
-        disp(['User selected ', fullfile(pathname, filename)])
-        delimiterIn = ' ';
-        headerlinesIn = 6;
-        cities = importdata(filename,delimiterIn,headerlinesIn);
+% [filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
+%      if isequal(filename, 0)
+%         disp('User selected ''Cancel''')
+%         
+%      else
+%         disp(['User selected ', fullfile(pathname, filename)])
+%         delimiterIn = ' ';
+%         headerlinesIn = 6;
+%         cities = importdata(filename,delimiterIn,headerlinesIn);
+%         coord = cities.data;
+% 
+%        
+%      end
+     
+        cities = importdata('eil51.txt',' ',6);
         coord = cities.data;
 
-       
-     end
 
-
-     plot(coord(:,1), coord(:,2), 'x')
+     plot(coord(:,1), coord(:,2), 'o')
      
