@@ -74,12 +74,14 @@ tau_init = 0.2;                                         %Pheromonmenge am Anfang
 
 
 runs = 10;                                               %shortest_path wird über Anzahl runs gemittelt
-shortest_path = zeros(runs,1);
+global_shortest_path = zeros(runs,1);
 %Fülle Vektor mit shortest_path für jeden Run
 for ii=1:runs
-    shortest_path(ii) = main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init);
+    global_shortest_path(ii) = main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init);
 end
-shortest_path
-shortest_path_average = sum(shortest_path)/runs         %Gemittelter shortest_path
+global_shortest_path
+global_shortest_path_average = sum(global_shortest_path)/runs         %Gemittelter shortest_path
+errors = std(global_shortest_path)                                    %Standardabweichung shortest_path
+
 
 %------------------------
