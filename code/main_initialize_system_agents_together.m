@@ -59,7 +59,7 @@ close all
 
      
  
-alpha = 0.4;
+alpha = 0.15;
 beta_0 = 2;
 no_agents = 10; 										%Wieviele Agents haben wir
 rounds = 2000;											%Wieviele Durchgänge
