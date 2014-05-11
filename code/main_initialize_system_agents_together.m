@@ -59,13 +59,17 @@ close all
 
      
  
-alpha = 0.1;
+alpha = 0.4;
 beta_0 = 2;
 no_agents = 10; 										%Wieviele Agents haben wir
-rounds = 1000;											%Wieviele Durchgänge
+
+rounds = 2000;											%Wieviele Durchgänge
+
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
 tau_init = 0.1;                                         %Pheromonmenge am Anfang
+
+V = 2;
 
 
 %------------------------
@@ -79,6 +83,10 @@ global_shortest_path = zeros(runs,1);
 for ii=1:runs
     [global_shortest_path(ii),tau_bild] = main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init);
 end
+
+V
+alpha
+
 rounds
 
 global_shortest_path
