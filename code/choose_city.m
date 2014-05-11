@@ -18,7 +18,7 @@ function [city_s] = choose_city (tau, beta_0, M_k, current_city, no_cities, curr
            %Start for-loop um alle Städte zu checken
            for ii = 1:no_cities
 
-               if M_k(ii)                            %Falls city ii von current_agent noch nicht besucht (M_k(ii) = 1)
+               if (M_k(ii)  == 1)                          %Falls city ii von current_agent noch nicht besucht (M_k(ii) = 1)
                    
                    %Berechne das argument nach Formel (1) im Paper
                    if (current_city > ii)
