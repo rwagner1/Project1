@@ -8,7 +8,7 @@ Conclusion: Konvergiert schnell aber bleibt auf hohem Wert, also in lokalem Mini
 alpha = 0.1;
 beta_0 = 2;
 no_agents = 10; 										%Wieviele Agents haben wir
-rounds = 200:2000;											%Wieviele DurchgÃ¤nge
+rounds = 200:1200 (1400-2000 in version2_tauneu_eil51);											%Wieviele DurchgÃ¤nge
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
 tau_init = 0.1;                                         %Pheromonmenge am Anfang
@@ -178,4 +178,37 @@ global_shortest_path_average =
 errors =
 
     6.8508
+==========================================================================================================
+V =
+
+     2
+
+
+rounds =
+
+        1200
+
+
+global_shortest_path =
+
+   446
+   466
+   438
+   436
+   446
+   453
+   444
+   448
+   447
+   433
+
+
+global_shortest_path_average =
+
+  445.7000
+
+
+errors =
+
+    9.3696
 ==========================================================================================================

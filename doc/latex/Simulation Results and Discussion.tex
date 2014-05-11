@@ -9,11 +9,12 @@ The shortest tour length is calculated for a 51 cities problem and averaged over
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=11cm, height= 6 cm]{rounds_vs_shortestpath}
-\caption{Shortest tour length averaged over 10 runs for different numbers of rounds. The value approximates the optimal solution for \approx 2000 rounds?}
+\caption{Shortest tour length averaged over 10 runs for different numbers of rounds. The value approximates the optimal solution for \approx 1200 rounds?}
 \label{fig:roundsp}
 \end{center}
 \end{figure}
-Figure \ref{fig:alphasp}
+
+Figure \ref{fig:alphasp} illustrates that the averaged shortest path length is optimized for \alpha between 0.1 and 0.3. This is the region where the length of the tour and also the error of the shortest path is minimized. This is why for the following simulations the parameter \alpha is chosen to be 0.1. The reason why the shortest path is highest close to zero and one can be understood considering the pheromone update formulae (\ref{eq:localtauupdate}) and (\ref{eq:globalupdate}) on page \pageref{sec:model}. For $\alpha=0$ the local and global pheromone concentration stays constant, no update is made. Hence the cities are only favored by closeness and not the pheromone concentration anymore. On the other hand, while \alpha 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=11cm, height= 6 cm]{alpha_vs_shortestpath}

@@ -1,8 +1,8 @@
 %Hauptfunktion zum Wählen der Parameter und einlesen der Matrix mit Daten der Städte und Strecken
 
 %Füge Pfade zu den Datensätzen dazu (ANPASSEN!)
-%addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
-addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
+addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
+%addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
 
 %Städtedaten einlesen
 %cities.data = links obere Dreiecksmatrix mit Dimension: (no_cities-1) x
@@ -13,22 +13,21 @@ clc
 close all
 
 %Citydaten einlesen (2D euklidische Distanzen) 
-% [filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
-%      if isequal(filename, 0)
-%         disp('User selected ''Cancel''')
-%         
-%      else
-%         disp(['User selected ', fullfile(pathname, filename)])
-%         delimiterIn = ' ';
-%         headerlinesIn = 6;
-%         cities = importdata(filename,delimiterIn,headerlinesIn);
-%         data_set = coordinates(cities.data);
-%        
-%      end
-
-
-        cities = importdata('eil51.txt',' ',6);
+[filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
+     if isequal(filename, 0)
+        disp('User selected ''Cancel''')
+        
+     else
+        disp(['User selected ', fullfile(pathname, filename)])
+        delimiterIn = ' ';
+        headerlinesIn = 6;
+        cities = importdata(filename,delimiterIn,headerlinesIn);
         data_set = coordinates(cities.data);
+       
+     end
+
+
+
 
 %Citydaten einlesen (obere linke Dreiecksmatrix, zb city bayg29)
 % [filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
@@ -61,17 +60,12 @@ close all
      
  
 alpha = 0.1;
-beta_0 = 2;
+beta_0 = 1;
 no_agents = 10; 										%Wieviele Agents haben wir
-
 rounds = 1200;											%Wieviele DurchgÃ¤nge
-
-											
-
-
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
-tau_init = 1;                                         %Pheromonmenge am Anfang
+tau_init = 0.1;                                         %Pheromonmenge am Anfang
 
 V = 2;
 
@@ -89,12 +83,10 @@ for ii=1:runs
 end
 
 V
-rounds
-tau_init
+beta
 global_shortest_path
-disp('eil51 gerundet altes tau')
 global_shortest_path_average = sum(global_shortest_path)/runs         %Gemittelter shortest_path
 errors = std(global_shortest_path)  %Standardabweichung shortest_path
-surf(tau_bild);
+surf(tau_bild)
 
 %------------------------
