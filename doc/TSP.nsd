@@ -3,10 +3,13 @@
  <children>
 
 <instruction text="&#34;Initialize System&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
-<for text="&#34;for i=0, i&#60;timesteps&#34;" comment="" color="FFFFFF">
+<for text="&#34;for i=1, i &#60;= runs&#34;" comment="" color="FFFFFF">
  <qFor>
 
-<for text="&#34;for j=0, j&#60;agents&#34;" comment="" color="FFFFFF">
+<for text="&#34;for i=1, i &#60;= rounds&#34;" comment="" color="FFFFFF">
+ <qFor>
+
+<for text="&#34;for j=1,  j &#60;= no_agents&#34;" comment="" color="FFFFFF">
  <qFor>
 
 <alternative text="&#34;tour completed&#34;" comment="" color="FFFFFF">
@@ -55,6 +58,8 @@
 <instruction text="&#34;choose shortest tour&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
 <instruction text="&#34;delta_tau=(shortest tour)^-1&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
 <instruction text="&#34;global pheromene update (on best agents tour)&#34;" comment="" color="FFFFFF" rotated="0"></instruction>
+ </qFor>
+</for>
  </qFor>
 </for>
  </children>

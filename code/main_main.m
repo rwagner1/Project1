@@ -1,7 +1,7 @@
 %Hauptfunktion
 %Bekommt Parameter von main_initialize_system und gibt ???? aus
 
-function[shortest_path]= main_main(alpha, beta_0, no_agents, data_set, rounds, start_city, q0, tau_init)
+function[global_shortest_path]= main_main(alpha, beta_0, no_agents, data_set, rounds, start_city, q0, tau_init)
 
 
 
@@ -15,7 +15,7 @@ tau = zeros (no_cities) + tau_init;											%tau als pheromenin-matrix mit dim
 
 %Berechnen von L_nn, benötigt für tau0
 
-L_nn = calc_Lnn(data_set, no_cities, start_city)						%Function calc_Lnn aufrufen um L_nn zu berechnen
+L_nn = calc_Lnn(data_set, no_cities, start_city);						%Function calc_Lnn aufrufen um L_nn zu berechnen
 tau0 = 1/(no_cities*L_nn);
 
 M_k(start_city, :) = 0;                                             %Memory f�r Startcity auf "besucht"
@@ -126,10 +126,9 @@ for ii = 1:rounds
         global_shortest_path = shortest_path;
     end
     
-    if mod(ii,50) == 0                          %Ausgabe global_shortest_path nach jeder 20. round
-       global_shortest_path
-    end
+%     if mod(ii,100) == 0                          %Ausgabe global_shortest_path nach jeder 20. round
+%        global_shortest_path
+%     end
     
 end %ii
-global_shortest_path
 

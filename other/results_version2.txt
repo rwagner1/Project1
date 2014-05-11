@@ -1,0 +1,8 @@
+Solving TSP using ACS
+
+Simulationsresultate Version 2 (alle Agenten zusammen): 
+falls tau_init fehlt tau_init = 0.1
+=============================================================================================================
+File:				eil51	
+=============================================================================================================
+Parameter wie in Paper, rounds=2000

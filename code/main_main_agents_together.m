@@ -10,7 +10,7 @@ no_cities = length (data_set(:,1));					        %LÃ¤nge der ersten Spalte der Ma
 
 %Memory der Ameise, Matrix mit Anzahl StÃ¤dten x Anzahl Agents
 %1 heisst noch nicht besucht.
-M_k = ones(no_cities, no_agents);
+
 tau = zeros (no_cities) + tau_init;							%tau als pheromenin-matrix mit dimension no_cities x no_cities, zu beginn alles null
 
 %Berechnen von L_nn, benÃ¶tigt fÃ¼r tau0
@@ -32,12 +32,12 @@ global_shortest_path = L_nn;                                %Globaler shortest_p
 
 
 for ii = 1:rounds
-
+    
     trajectory = zeros(no_cities, no_agents);                           %trajectory Matrix inizieren
     current_city = zeros(no_agents, 1);                                 %current_city Vektor inizieren
-    s_city = zeros(no_agents, 1);                                       %s_city Vektro inizieren
+    city_s = zeros(no_agents, 1);                                       %s_city Vektro inizieren
     path_length = zeros(no_agents,1);                                   %Tourlängen-Vektor mit inizieren
-
+    M_k = ones(no_cities, no_agents);
 
     for current_agent = 1:no_agents
 
@@ -64,7 +64,7 @@ for ii = 1:rounds
     	for current_agent = 1:no_agents
             
             city_s(current_agent) = choose_city(tau, beta_0, M_k(:,current_agent), current_city(current_agent), no_cities, current_agent, q0, data_set);              %Wähle eine Stadt
-                              
+                             
             M_k(city_s(current_agent), current_agent) = 0;                  %Memory dass stadt city_s besucht wurde
                 
                 
@@ -106,6 +106,7 @@ for ii = 1:rounds
             %--------------------------------------------------------------
 
         end  %for current_agent, schleife über Agents in einem Timestep. Alle Agents bewegen sich um eine Stadt vor
+      
 
     end % for jj, schleife über die Anzahl städte
 
@@ -140,7 +141,7 @@ for ii = 1:rounds
 
     
 
-    if mod(ii,50) == 0                                                  %Ausgabe global_shortest_path nach jeder 20. round
+    if mod(ii,50) == 0                                                  %Ausgabe global_shortest_path nach jeder 50. round
 
        global_shortest_path
 
