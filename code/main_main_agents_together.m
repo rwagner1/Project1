@@ -15,7 +15,7 @@ tau = zeros (no_cities) + tau_init;							%tau als pheromenin-matrix mit dimensi
 
 %Berechnen von L_nn, benÃ¶tigt fÃ¼r tau0
 
-L_nn = calc_Lnn(data_set, no_cities, 1)						%Function calc_Lnn aufrufen um L_nn zu berechnen
+L_nn = calc_Lnn(data_set, no_cities, 1);						%Function calc_Lnn aufrufen um L_nn zu berechnen
 tau0 = 1/(no_cities*L_nn);
 
 start_city = zeros(no_agents,1);                            %Start_city ist für jeden Agent unterschiedlich
@@ -140,13 +140,13 @@ for ii = 1:rounds
     end %if shortest path Vergleich
 
     
-
-    if mod(ii,50) == 0                                                  %Ausgabe global_shortest_path nach jeder 50. round
-
-       global_shortest_path
-
-    end %if Ausgabe von global_shortest_path
+% 
+%     if mod(ii,50) == 0                                                  %Ausgabe global_shortest_path nach jeder 50. round
+% 
+%        global_shortest_path
+% 
+%     end %if Ausgabe von global_shortest_path
     
 end %for ii, über die rounds
-global_shortest_path
+global_shortest_path;
 
