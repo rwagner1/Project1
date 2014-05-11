@@ -33,6 +33,8 @@ global_shortest_path = L_nn;                                %Globaler shortest_p
 
 for ii = 1:rounds
     
+         plot(coord(:,1), coord(:,2), 'o')
+ 
     trajectory = zeros(no_cities, no_agents);                           %trajectory Matrix inizieren
     current_city = zeros(no_agents, 1);                                 %current_city Vektor inizieren
     city_s = zeros(no_agents, 1);                                       %s_city Vektro inizieren
@@ -129,7 +131,7 @@ for ii = 1:rounds
 	%-----------------------------------------------------
 	%Globales Update
 	%-----------------------------------------------------
-    tau = global_pheromene_update(trajectory(:, shortest_path_index), tau, shortest_path, no_cities, alpha, trajectory(1, shortest_path_index) );
+    tau = global_pheromene_update_2(trajectory(:, shortest_path_index), tau, shortest_path, no_cities, alpha, trajectory(1, shortest_path_index) );
     %-----------------------------------------------------
 
 
@@ -141,9 +143,7 @@ for ii = 1:rounds
     end %if shortest path Vergleich
 
     
-
 % 
-
 %     if mod(ii,50) == 0                                                  %Ausgabe global_shortest_path nach jeder 50. round
 % 
 %        global_shortest_path
@@ -151,9 +151,6 @@ for ii = 1:rounds
 %     end %if Ausgabe von global_shortest_path
     
 end %for ii, über die rounds
-
 global_shortest_path;
-
 trajectory(:, shortest_path_index);
     tau_bild = tau;
-

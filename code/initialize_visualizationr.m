@@ -1,8 +1,8 @@
 %Hauptfunktion zum Wählen der Parameter und einlesen der Matrix mit Daten der Städte und Strecken
 
 %Füge Pfade zu den Datensätzen dazu (ANPASSEN!)
-%addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
-addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
+addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
+%addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
 
 %Städtedaten einlesen
 %cities.data = links obere Dreiecksmatrix mit Dimension: (no_cities-1) x
@@ -62,18 +62,15 @@ close all
  
 alpha = 0.1;
 beta_0 = 2;
-no_agents = 10; 										%Wieviele Agents haben wir
+no_agents = 1; 										%Wieviele Agents haben wir
 
-rounds = 1200;											%Wieviele DurchgÃ¤nge
-
-											
-
+rounds = 1;											%Wieviele DurchgÃ¤nge
 
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
-tau_init = 1;                                         %Pheromonmenge am Anfang
+tau_init = 0.1;                                         %Pheromonmenge am Anfang
 
-V = 2;
+
 
 
 %------------------------
@@ -85,16 +82,15 @@ runs = 10;                                               %shortest_path wird übe
 global_shortest_path = zeros(runs,1);
 %Fülle Vektor mit shortest_path für jeden Run
 for ii=1:runs
-    [global_shortest_path(ii),tau_bild] = main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init);
+    [global_shortest_path(ii),tau_bild] = visualization_main(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init);
 end
 
-V
+
 rounds
-tau_init
 global_shortest_path
-disp('eil51 gerundet altes tau')
+
 global_shortest_path_average = sum(global_shortest_path)/runs         %Gemittelter shortest_path
 errors = std(global_shortest_path)  %Standardabweichung shortest_path
-surf(tau_bild);
+
 
 %------------------------

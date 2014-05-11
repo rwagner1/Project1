@@ -1,0 +1,36 @@
+alpha = 0.1;
+beta_0 = 2;
+no_agents = 10; 										%Wieviele Agents haben wir
+q0 = 0.9;
+tau_init = 0.1; 
+
+=====================================================================================
+
+rounds =
+
+        1000
+
+eil51 gerundet
+
+global_shortest_path =
+
+   432
+   433
+   430
+   434
+   434
+   426
+   431
+   435
+   430
+   436
+
+
+global_shortest_path_average =
+
+  432.1000
+
+
+errors =
+
+    2.9609
