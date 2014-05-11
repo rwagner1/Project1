@@ -1,8 +1,8 @@
 %Hauptfunktion zum Wählen der Parameter und einlesen der Matrix mit Daten der Städte und Strecken
 
 %Füge Pfade zu den Datensätzen dazu (ANPASSEN!)
-%addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
-addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
+addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
+%addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
 
 %Städtedaten einlesen
 %cities.data = links obere Dreiecksmatrix mit Dimension: (no_cities-1) x
@@ -62,7 +62,7 @@ close all
 alpha = 0.1;
 beta_0 = 2;
 no_agents = 10; 										%Wieviele Agents haben wir
-rounds = 1200;											%Wieviele DurchgÃ¤nge
+rounds = 2000;											%Wieviele DurchgÃ¤nge
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
 tau_init = 0.1;                                         %Pheromonmenge am Anfang
@@ -83,6 +83,8 @@ for ii=1:runs
 end
 
 V
+alpha
+
 rounds
 
 global_shortest_path

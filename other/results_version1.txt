@@ -2,6 +2,7 @@ Solving TSP using ACS
 
 Simulationsresultate Version 1:
 falls tau_init fehlt tau_init = 0.1
+altes tau, ungerundete Koordinaten
 =============================================================================================================
 File:				eil51	
 =============================================================================================================	

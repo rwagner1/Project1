@@ -1,0 +1,181 @@
+Solving TSP using ACS
+
+Plot rounds vs shortest path
+Resultate mit Modell V2, gerundet und neues tau
+
+Conclusion: Konvergiert schnell aber bleibt auf hohem Wert, also in lokalem Minimum
+==========================================================================================================
+alpha = 0.1;
+beta_0 = 2;
+no_agents = 10; 										%Wieviele Agents haben wir
+rounds = 200:2000;											%Wieviele DurchgÃ¤nge
+start_city = 1;											%Bei welcher Stadt startet der Agent
+q0 = 0.9;
+tau_init = 0.1;                                         %Pheromonmenge am Anfang
+
+V = 2;
+==========================================================================================================
+V =
+
+     2
+
+
+rounds =
+
+   200
+
+
+global_shortest_path =
+
+   469
+   459
+   462
+   488
+   463
+   466
+   467
+   473
+   464
+   461
+
+
+global_shortest_path_average =
+
+  467.2000
+
+
+errors =
+
+    8.3772
+==========================================================================================================
+V =
+
+     2
+
+
+rounds =
+
+   400
+
+
+global_shortest_path =
+
+   440
+   455
+   441
+   460
+   452
+   454
+   465
+   470
+   455
+   458
+
+
+global_shortest_path_average =
+
+   455
+
+
+errors =
+
+    9.3690
+==========================================================================================================V =
+
+     2
+
+
+rounds =
+
+   600
+
+
+global_shortest_path =
+
+   455
+   450
+   448
+   461
+   446
+   446
+   449
+   461
+   464
+   454
+
+
+global_shortest_path_average =
+
+  453.4000
+
+
+errors =
+
+    6.6700
+==========================================================================================================
+V =
+
+     2
+
+
+rounds =
+
+   800
+
+
+global_shortest_path =
+
+   447
+   444
+   449
+   455
+   431
+   446
+   445
+   457
+   472
+   446
+
+
+global_shortest_path_average =
+
+  449.2000
+
+
+errors =
+
+   10.6228
+==========================================================================================================
+V =
+
+     2
+
+
+rounds =
+
+        1000
+
+
+global_shortest_path =
+
+   437
+   444
+   451
+   458
+   444
+   447
+   435
+   448
+   443
+   439
+
+
+global_shortest_path_average =
+
+  444.6000
+
+
+errors =
+
+    6.8508
+==========================================================================================================
