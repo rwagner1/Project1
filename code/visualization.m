@@ -27,4 +27,6 @@ addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
 
 
      plot(coord(:,1), coord(:,2), 'o')
+     hold on
+     plot([10,51],[10,40], 'red')
      

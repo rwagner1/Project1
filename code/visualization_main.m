@@ -8,6 +8,10 @@ function[global_shortest_path, tau_bild]= main_main_agents_together(alpha, beta_
 %Auslesen der Anzahl StÃ¤dte
 no_cities = length (data_set(:,1));					        %LÃ¤nge der ersten Spalte der Matrix auslesen
 
+
+coord = importdata('eil51.txt',' ',6);
+coord = coord.data
+
 %Memory der Ameise, Matrix mit Anzahl StÃ¤dten x Anzahl Agents
 %1 heisst noch nicht besucht.
 
@@ -19,7 +23,7 @@ L_nn = calc_Lnn(data_set, no_cities, 1);						%Function calc_Lnn aufrufen um L_n
 tau0 = 1/(no_cities*L_nn);
 
 start_city = zeros(no_agents,1);                            %Start_city ist für jeden Agent unterschiedlich
-
+farbe = ['g' 'r' 'b' 'k' 'y' 'c' 'ma'];
 
 
 
@@ -33,6 +37,9 @@ global_shortest_path = L_nn;                                %Globaler shortest_p
 
 for ii = 1:rounds
     
+         plot(coord(:,2), coord(:,3), 'o', -)
+         hold on
+ 
     trajectory = zeros(no_cities, no_agents);                           %trajectory Matrix inizieren
     current_city = zeros(no_agents, 1);                                 %current_city Vektor inizieren
     city_s = zeros(no_agents, 1);                                       %s_city Vektro inizieren
@@ -65,8 +72,12 @@ for ii = 1:rounds
             
             city_s(current_agent) = choose_city(tau, beta_0, M_k(:,current_agent), current_city(current_agent), no_cities, current_agent, q0, data_set);              %Wähle eine Stadt
                              
-            M_k(city_s(current_agent), current_agent) = 0;                  %Memory dass stadt city_s besucht wurde
-                
+            M_k(city_s(current_agent), current_agent) = 0;                  %Memory dass stadt city_s besucht wurde            
+
+         
+            plot([coord(current_city(current_agent), 2) coord(city_s(current_agent),2)],[coord(current_city(current_agent), 3) coord(city_s(current_agent), 3)], farbe(current_agent))
+            
+            pause(0.1) %pause in sec
                 
             %---------------pfadlänge und Pherominupdate-------------------
             if current_city(current_agent) < city_s(current_agent)
@@ -148,6 +159,7 @@ for ii = 1:rounds
 % 
 %     end %if Ausgabe von global_shortest_path
     
+    hold off
 end %for ii, über die rounds
 global_shortest_path;
 trajectory(:, shortest_path_index);
