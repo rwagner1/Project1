@@ -9,7 +9,7 @@
 function[data_set] = coordinates(koordinaten)
 
 	no_cities = length (koordinaten);
-	data_set = zeros(no_cities)
+	data_set = zeros(no_cities);
 
 	for haupt=1:(no_cities-1)
 
