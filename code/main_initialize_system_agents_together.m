@@ -1,8 +1,8 @@
 %Hauptfunktion zum Wählen der Parameter und einlesen der Matrix mit Daten der Städte und Strecken
 
 %Füge Pfade zu den Datensätzen dazu (ANPASSEN!)
-addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
-%addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
+%addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
+addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
 
 %Städtedaten einlesen
 %cities.data = links obere Dreiecksmatrix mit Dimension: (no_cities-1) x
