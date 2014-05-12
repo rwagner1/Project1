@@ -62,7 +62,7 @@ close all
 
      
  
-alpha = 0.1;
+alpha = 0.05;
 beta_0 = 2;
 no_agents = 10; 										%Wieviele Agents haben wir
 rounds = 2000;											%Wieviele Durchgänge
@@ -87,8 +87,7 @@ end
 
 
 disp('eil51')
-global_shortest_path
-global_shortest_trajectory
+alpha
 global_shortest_path_average = sum(global_shortest_path)/runs         %Gemittelter shortest_path
 errors = std(global_shortest_path)  %Standardabweichung shortest_path
 figure

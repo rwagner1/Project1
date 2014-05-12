@@ -1,7 +1,7 @@
 %Hauptfunktion
 %alle agents werden zu Beginn zufällig auf Städte verteilt und bewegen sich dann gleichzeitig Schritt für Schritt
 
-function[global_shortest_path, tau_bild, global_shortest_trajectory]= main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init)
+function[global_shortest_path, tau_bild, global_shortest_trajectory]= g_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init)
 
 
 

@@ -1,8 +1,8 @@
 %Hauptfunktion zum Wählen der Parameter und einlesen der Matrix mit Daten der Städte und Strecken
 
 %Füge Pfade zu den Datensätzen dazu (ANPASSEN!)
-addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
-%addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
+%addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
+addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
 
 %Städtedaten einlesen
 %cities.data = links obere Dreiecksmatrix mit Dimension: (no_cities-1) x
@@ -13,21 +13,18 @@ clc
 close all
 
 %Citydaten einlesen (2D euklidische Distanzen) 
-% [filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
-%      if isequal(filename, 0)
-%         disp('User selected ''Cancel''')
-%         
-%      else
-%         disp(['User selected ', fullfile(pathname, filename)])
-%         delimiterIn = ' ';
-%         headerlinesIn = 9;
-%         cities = importdata(filename,delimiterIn,headerlinesIn);
-%         data_set = coordinates(cities.data);
-%        
-%      end
-     
-        cities = importdata('eil51.txt',' ',6);
+[filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
+     if isequal(filename, 0)
+        disp('User selected ''Cancel''')
+        
+     else
+        disp(['User selected ', fullfile(pathname, filename)])
+        delimiterIn = ' ';
+        headerlinesIn = 9;
+        cities = importdata(filename,delimiterIn,headerlinesIn);
         data_set = coordinates(cities.data);
+       
+     end
 
 
 
@@ -64,13 +61,11 @@ close all
  
 alpha = 0.1;
 beta_0 = 2;
-no_agents = 10; 										%Wieviele Agents haben wir
-rounds = 2000;											%Wieviele DurchgÃ¤nge
-
+no_agents = 25; 										%Wieviele Agents haben wir
+start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
-tau_init = 0.001;                                         %Pheromonmenge am Anfang
-
-
+tau_init = 0.1;                                         %Pheromonmenge am Anfang
+solution = 420;                                         %Länge der kürzesten Tour, Lösung 
 V = 2;
 
 
@@ -79,19 +74,21 @@ V = 2;
 %------------------------
 
 
-runs = 20;                                               %shortest_path wird über Anzahl runs gemittelt
+runs = 10;                                              %shortest_path wird über Anzahl runs gemittelt
 global_shortest_path = zeros(runs,1);
+rounds_needed = zeros(runs,1);                          %Benötigte Runden bis kürzeste Tour 3x hintereinander gefunden wurde
 %Fülle Vektor mit shortest_path für jeden Run
 for ii=1:runs
-    [global_shortest_path(ii),tau_bild, global_shortest_trajectory] = main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init);
+    [global_shortest_path(ii),tau_bild,rounds_needed(ii)] = main_main_while_agents_together(alpha, beta_0, no_agents, data_set, q0, tau_init, solution);
 end
 
-
-disp('eil51')
+no_agents
+rounds_needed
+rounds_needed_average = sum(rounds_needed)/runs                         %Gemittelte Anzahl benötigter Runden
+errors = std(rounds_needed)                                             %Standardabweichung Anzahl benötigter Runden                                   
 global_shortest_path
-global_shortest_trajectory
-global_shortest_path_average = sum(global_shortest_path)/runs         %Gemittelter shortest_path
-errors = std(global_shortest_path)  %Standardabweichung shortest_path
+global_shortest_path_average = sum(global_shortest_path)/runs;          %Gemittelter shortest_path
+errors = std(global_shortest_path);                                     %Standardabweichung shortest_path
 figure
 
 %------------------------
