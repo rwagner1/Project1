@@ -1,7 +1,9 @@
 %Hauptfunktion
 %alle agents werden zu Beginn zufällig auf Städte verteilt und bewegen sich dann gleichzeitig Schritt für Schritt
+%Programm endet falls trajectory(shortest_path_index)  mal hintereinander
+%gleich ist
 
-function[global_shortest_path, tau_bild]= main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init)
+function[global_shortest_path, tau_bild]= main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init, final_rounds)
 
 
 
@@ -25,12 +27,13 @@ start_city = zeros(no_agents,1);                            %Start_city ist für 
 
 global_shortest_path = L_nn;                                %Globaler shortest_path vergleicht shortest_path's von allen gegangenen rounds
 
+trajectory_optimal = zeros(no_cities,final_rounds)                  %Matrix mit optimalen trajectories
 
 %-------------------------------------------------------------------------------
 %Start der Berechnung mit "rounds"-DurchgÃ¤ngen
 %-------------------------------------------------------------------------------
 
-
+while trajectory_optimal(ii) == trajectory_optimal(ii+1)
 for ii = 1:rounds
     
     trajectory = zeros(no_cities, no_agents);                           %trajectory Matrix inizieren
@@ -154,6 +157,6 @@ end %for ii, über die rounds
 
 global_shortest_path;
 
-trajectory(:, shortest_path_index)
+trajectory_optimal = trajectory(:, shortest_path_index)
     tau_bild = tau;
 

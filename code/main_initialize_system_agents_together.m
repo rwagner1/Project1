@@ -62,10 +62,10 @@ close all
 alpha = 0.1;
 beta_0 = 2;
 no_agents = 10; 										%Wieviele Agents haben wir
-rounds = 300;											%Wieviele DurchgÃ¤nge
+rounds = 400;											%Wieviele DurchgÃ¤nge
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
-tau_init = 0.1;                                         %Pheromonmenge am Anfang
+tau_init = 0.001;                                         %Pheromonmenge am Anfang
 
 
 V = 2;
@@ -76,7 +76,7 @@ V = 2;
 %------------------------
 
 
-runs = 10;                                               %shortest_path wird über Anzahl runs gemittelt
+runs = 20;                                               %shortest_path wird über Anzahl runs gemittelt
 global_shortest_path = zeros(runs,1);
 %Fülle Vektor mit shortest_path für jeden Run
 for ii=1:runs

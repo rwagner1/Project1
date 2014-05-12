@@ -1,7 +1,9 @@
 %Hauptfunktion
 %alle agents werden zu Beginn zufällig auf Städte verteilt und bewegen sich dann gleichzeitig Schritt für Schritt
+%Programm endet falls trajectory(shortest_path_index)  mal hintereinander
+%gleich ist
 
-function[global_shortest_path, tau_bild]= main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init)
+function[global_shortest_path, tau_bild]= main_main_while_agents_together(alpha, beta_0, no_agents, data_set, q0, tau_init, final_rounds, solution)
 
 
 
@@ -21,7 +23,10 @@ tau0 = 1/(no_cities*L_nn);
 start_city = zeros(no_agents,1);                            %Start_city ist für jeden Agent unterschiedlich
 
 
-
+trajectory_optimal = zeros((final_rounds-1),1);                 %Vektor mit kürzesten Touren, die sich final_rounds mal hintereinander wiederholen müssen
+rounds = 1;
+shortest_path_prev = 0;
+ii = 1;                                                     %Komponente von trajectory_optimal Vektor
 
 global_shortest_path = L_nn;                                %Globaler shortest_path vergleicht shortest_path's von allen gegangenen rounds
 
@@ -30,8 +35,7 @@ global_shortest_path = L_nn;                                %Globaler shortest_p
 %Start der Berechnung mit "rounds"-DurchgÃ¤ngen
 %-------------------------------------------------------------------------------
 
-
-for ii = 1:rounds
+while (sum(trajectory_optimal) ~=  (final_rounds-1)*solution)                %Abbruchkriterium    
     
     trajectory = zeros(no_cities, no_agents);                           %trajectory Matrix inizieren
     current_city = zeros(no_agents, 1);                                 %current_city Vektor inizieren
@@ -48,9 +52,7 @@ for ii = 1:rounds
 
 
     end %for current_agent
-    
-  
-
+   
     %Start der Durchgänge, in jedem Durchgang machen alle Agents nacheinander einen Schritt, gehen also eine Stadt weiter
     %es gibt soviele Durchgänge wie es Städte gibt und falls wir im letzten Durchgang sind, wird am Ende noch der Weg nachhause 
     %dazugerechnet.
@@ -139,21 +141,20 @@ for ii = 1:rounds
         global_shortest_path = shortest_path;
 
     end %if shortest path Vergleich
-
     
+    if ((shortest_path == solution) && (shortest_path_prev == solution) && ())
+            trajectory_optimal(ii) = shortest_path;
+            ii = ii+1;
+    end
 
-% 
 
-%     if mod(ii,50) == 0                                                  %Ausgabe global_shortest_path nach jeder 50. round
-% 
-%        global_shortest_path
-% 
-%     end %if Ausgabe von global_shortest_path
-    
-end %for ii, über die rounds
+    rounds = rounds+1;                                                    %Runden zählen                                              
+    shortest_path_prev = shortest_path;
+end %while
 
+%Ausgabe                                                               
+rounds                                                                    %Anzahl Runden bis Abbruchkriterium erfüllt
+trajectory(:,shortest_path_index)
 global_shortest_path;
-
-trajectory(:, shortest_path_index)
-    tau_bild = tau;
-
+tau_bild = tau;
+end
