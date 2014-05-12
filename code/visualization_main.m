@@ -9,7 +9,7 @@ function[global_shortest_path, tau_bild]= main_main_agents_together(alpha, beta_
 no_cities = length (data_set(:,1));					        %LÃ¤nge der ersten Spalte der Matrix auslesen
 
 
-coord = importdata('eil51.txt',' ',6);
+coord = importdata('ulysses16.txt',' ',7);
 coord = coord.data
 
 %Memory der Ameise, Matrix mit Anzahl StÃ¤dten x Anzahl Agents
@@ -26,7 +26,6 @@ start_city = zeros(no_agents,1);                            %Start_city ist für 
 farbe = ['g' 'r' 'b' 'k' 'y' 'c' 'ma'];
 
 
-
 global_shortest_path = L_nn;                                %Globaler shortest_path vergleicht shortest_path's von allen gegangenen rounds
 
 
@@ -37,7 +36,7 @@ global_shortest_path = L_nn;                                %Globaler shortest_p
 
 for ii = 1:rounds
     
-         plot(coord(:,2), coord(:,3), 'o', -)
+         plot(coord(:,2), coord(:,3), 'k*')
          hold on
  
     trajectory = zeros(no_cities, no_agents);                           %trajectory Matrix inizieren
@@ -52,6 +51,7 @@ for ii = 1:rounds
         M_k(start_city(current_agent), current_agent) = 0;              %Memory für Startstadt setzen
         trajectory(1, current_agent) = start_city(current_agent);       %Die Startstadt jedes Agent als erste in der Trajectorymatrix setzen
         current_city(current_agent) = start_city(current_agent);        %Startstadt bekannt geben
+        plot(coord(start_city(current_agent), 2), coord(start_city(current_agent), 3), 'O', 'Color', farbe(current_agent))
 
 
     end %for current_agent
@@ -75,9 +75,9 @@ for ii = 1:rounds
             M_k(city_s(current_agent), current_agent) = 0;                  %Memory dass stadt city_s besucht wurde            
 
          
-            plot([coord(current_city(current_agent), 2) coord(city_s(current_agent),2)],[coord(current_city(current_agent), 3) coord(city_s(current_agent), 3)], farbe(current_agent))
+            line([coord(current_city(current_agent), 2) coord(city_s(current_agent),2)],[coord(current_city(current_agent), 3) coord(city_s(current_agent), 3)], 'LineWidth', 2, 'Color', farbe(current_agent))
             
-            pause(0.1) %pause in sec
+            pause(0.001) %pause in sec
                 
             %---------------pfadlänge und Pherominupdate-------------------
             if current_city(current_agent) < city_s(current_agent)

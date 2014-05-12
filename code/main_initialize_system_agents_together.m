@@ -68,7 +68,7 @@ rounds = 1200;											%Wieviele Durchgänge
 
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
-tau_init = 1;                                         %Pheromonmenge am Anfang
+tau_init = 0.008;                                         %Pheromonmenge am Anfang
 
 V = 2;
 

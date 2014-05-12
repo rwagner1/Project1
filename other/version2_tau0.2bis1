@@ -1,0 +1,318 @@
+alpha = 0.1;
+beta_0 = 2;
+no_agents = 10; 										%Wieviele Agents haben wir
+q0 = 0.9;
+rounds = 1200;
+
+=====================================================================================
+
+tau_init =
+
+  0.0005
+
+
+global_shortest_path =
+
+   436
+   435
+   427
+   440
+   432
+   431
+   432
+   429
+   433
+   433
+
+eil51 gerundet altes tau
+
+global_shortest_path_average =
+
+  432.8000
+
+
+errors =
+
+    3.6454
+	
+=================================
+
+tau_init =
+
+    0.0200
+
+
+global_shortest_path =
+
+   436
+   434
+   431
+   429
+   434
+   430
+   427
+   433
+   437
+   438
+
+eil51 gerundet altes tau
+
+global_shortest_path_average =
+
+  432.9000
+
+
+errors =
+
+    3.6040
+	
+=======================================================================================
+
+tau_init =
+
+    0.0400
+
+
+global_shortest_path =
+
+   433
+   426
+   429
+   430
+   426
+   438
+   434
+   436
+   430
+   434
+
+eil51 gerundet altes tau
+
+global_shortest_path_average =
+
+  431.6000
+
+
+errors =
+
+    4.0607
+	
+================================================
+
+tau_init =
+
+    0.0600
+
+
+global_shortest_path =
+
+   433
+   431
+   435
+   434
+   432
+   441
+   431
+   432
+   432
+   431
+
+eil51 gerundet altes tau
+
+global_shortest_path_average =
+
+  433.2000
+
+
+errors =
+
+    3.0478
+	
+=================================================
+
+tau_init =
+
+    0.0800
+
+
+global_shortest_path =
+
+   429
+   437
+   430
+   437
+   431
+   438
+   429
+   433
+   436
+   431
+
+eil51 gerundet altes tau
+
+global_shortest_path_average =
+
+  433.1000
+
+
+errors =
+
+    3.5730
+	
+====================================================================================
+
+tau_init =
+
+    0.2000
+
+
+global_shortest_path =
+
+   433
+   438
+   436
+   430
+   435
+   426
+   427
+   430
+   429
+   429
+
+eil51 gerundet altes tau
+
+global_shortest_path_average =
+
+  431.3000
+
+
+errors =
+
+    4.0014
+	
+=======================================================================================
+
+
+tau_init =
+
+    0.4000
+
+
+global_shortest_path =
+
+   435
+   434
+   429
+   434
+   442
+   433
+   428
+   433
+   435
+   432
+
+eil51 gerundet altes tau
+
+global_shortest_path_average =
+
+  433.5000
+
+
+errors =
+
+    3.8079
+	
+========================================================================================
+
+tau_init =
+
+    0.6000
+
+
+global_shortest_path =
+
+   429
+   435
+   428
+   442
+   430
+   439
+   430
+   435
+   427
+   434
+
+eil51 gerundet altes tau
+
+global_shortest_path_average =
+
+  432.9000
+
+
+errors =
+
+    4.9542
+	
+========================================================================================
+
+tau_init =
+
+    0.8000
+
+
+global_shortest_path =
+
+   440
+   434
+   437
+   442
+   435
+   430
+   432
+   426
+   431
+   441
+
+eil51 gerundet altes tau
+
+global_shortest_path_average =
+
+  434.8000
+
+
+errors =
+
+    5.2239
+	
+======================================================================================
+
+tau_init =
+
+     1
+
+
+global_shortest_path =
+
+   436
+   434
+   432
+   436
+   434
+   438
+   436
+   437
+   434
+   435
+
+eil51 gerundet altes tau
+
+global_shortest_path_average =
+
+  435.2000
+
+
+errors =
+
+    1.7512
+
+ 

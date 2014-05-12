@@ -27,7 +27,7 @@ close all
 %      end
 
 
-        cities = importdata('eil51.txt',' ',6);
+        cities = importdata('ulysses16.txt',' ',7);
         data_set = coordinates(cities.data);
 
 %Citydaten einlesen (obere linke Dreiecksmatrix, zb city bayg29)
@@ -62,13 +62,13 @@ close all
  
 alpha = 0.1;
 beta_0 = 2;
-no_agents = 1; 										%Wieviele Agents haben wir
+no_agents = 7; 										%Wieviele Agents haben wir
 
-rounds = 1;											%Wieviele DurchgÃ¤nge
+rounds = 200;											%Wieviele DurchgÃ¤nge
 
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
-tau_init = 0.1;                                         %Pheromonmenge am Anfang
+tau_init = 0.0012;                                         %Pheromonmenge am Anfang
 
 
 
@@ -78,7 +78,7 @@ tau_init = 0.1;                                         %Pheromonmenge am Anfang
 %------------------------
 
 
-runs = 10;                                               %shortest_path wird über Anzahl runs gemittelt
+runs = 1;                                               %shortest_path wird über Anzahl runs gemittelt
 global_shortest_path = zeros(runs,1);
 %Fülle Vektor mit shortest_path für jeden Run
 for ii=1:runs
