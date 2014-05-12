@@ -59,10 +59,10 @@ close all
 
      
  
-alpha = 0.1;
+alpha = 5;
 beta_0 = 2;
 no_agents = 10; 										%Wieviele Agents haben wir
-rounds = 6000;											%Wieviele Durchgänge
+rounds = 4000;											%Wieviele Durchgänge
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
 tau_init = 0.1;                                         %Pheromonmenge am Anfang

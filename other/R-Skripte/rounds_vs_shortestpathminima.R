@@ -1,5 +1,7 @@
 #Plot rounds vs. global_shortest_path_minimum
 
+#Version 1 und 2, ungerundet, altes tau
+
 # alpha = 0.1;
 # beta_0 = 2;
 # no_agents = 10;     							

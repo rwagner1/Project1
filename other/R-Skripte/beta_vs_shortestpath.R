@@ -1,8 +1,9 @@
 #Plot beta vs. global_shortest_path_average
 
+#Version2, gerundet, altes tau
 # alpha = 0.1;
 # no_agents = 10;     							
-# rounds = ?										
+# rounds = 1200										
 # start_city = 1;										
 # q0 = 0.9;
 # tau_init = 0.1;                               
