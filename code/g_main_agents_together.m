@@ -1,7 +1,7 @@
 %Hauptfunktion
 %alle agents werden zu Beginn zufällig auf Städte verteilt und bewegen sich dann gleichzeitig Schritt für Schritt
 
-function[global_shortest_path]= main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init, coord)
+function[global_shortest_path, tau_bild, global_shortest_trajectory]= main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init)
 
 
 
@@ -10,12 +10,12 @@ no_cities = length (data_set(:,1));					        %LÃ¤nge der ersten Spalte der Ma
 
 %Memory der Ameise, Matrix mit Anzahl StÃ¤dten x Anzahl Agents
 %1 heisst noch nicht besucht.
-M_k = ones(no_cities, no_agents);
+
 tau = zeros (no_cities) + tau_init;							%tau als pheromenin-matrix mit dimension no_cities x no_cities, zu beginn alles null
 
 %Berechnen von L_nn, benÃ¶tigt fÃ¼r tau0
 
-L_nn = calc_Lnn(data_set, no_cities, 1)						%Function calc_Lnn aufrufen um L_nn zu berechnen
+L_nn = calc_Lnn(data_set, no_cities, 1);						%Function calc_Lnn aufrufen um L_nn zu berechnen
 tau0 = 1/(no_cities*L_nn);
 
 start_city = zeros(no_agents,1);                            %Start_city ist für jeden Agent unterschiedlich
@@ -26,13 +26,18 @@ start_city = zeros(no_agents,1);                            %Start_city ist für 
 global_shortest_path = L_nn;                                %Globaler shortest_path vergleicht shortest_path's von allen gegangenen rounds
 
 
+%-------------------------------------------------------------------------------
+%Start der Berechnung mit "rounds"-DurchgÃ¤ngen
+%-------------------------------------------------------------------------------
 
 
+for ii = 1:rounds
+    
     trajectory = zeros(no_cities, no_agents);                           %trajectory Matrix inizieren
     current_city = zeros(no_agents, 1);                                 %current_city Vektor inizieren
-    s_city = zeros(no_agents, 1);                                       %s_city Vektro inizieren
+    city_s = zeros(no_agents, 1);                                       %s_city Vektro inizieren
     path_length = zeros(no_agents,1);                                   %Tourlängen-Vektor mit inizieren
-
+    M_k = ones(no_cities, no_agents);
 
     for current_agent = 1:no_agents
 
@@ -41,12 +46,10 @@ global_shortest_path = L_nn;                                %Globaler shortest_p
         trajectory(1, current_agent) = start_city(current_agent);       %Die Startstadt jedes Agent als erste in der Trajectorymatrix setzen
         current_city(current_agent) = start_city(current_agent);        %Startstadt bekannt geben
 
-        plot(coord(start_city(current_agent),2), coord(stadt_city(current_agent), 3), 'o')
-
 
     end %for current_agent
     
-    
+  
 
     %Start der Durchgänge, in jedem Durchgang machen alle Agents nacheinander einen Schritt, gehen also eine Stadt weiter
     %es gibt soviele Durchgänge wie es Städte gibt und falls wir im letzten Durchgang sind, wird am Ende noch der Weg nachhause 
@@ -61,7 +64,7 @@ global_shortest_path = L_nn;                                %Globaler shortest_p
     	for current_agent = 1:no_agents
             
             city_s(current_agent) = choose_city(tau, beta_0, M_k(:,current_agent), current_city(current_agent), no_cities, current_agent, q0, data_set);              %Wähle eine Stadt
-                              
+                             
             M_k(city_s(current_agent), current_agent) = 0;                  %Memory dass stadt city_s besucht wurde
                 
                 
@@ -103,6 +106,7 @@ global_shortest_path = L_nn;                                %Globaler shortest_p
             %--------------------------------------------------------------
 
         end  %for current_agent, schleife über Agents in einem Timestep. Alle Agents bewegen sich um eine Stadt vor
+      
 
     end % for jj, schleife über die Anzahl städte
 
@@ -128,21 +132,29 @@ global_shortest_path = L_nn;                                %Globaler shortest_p
     tau = global_pheromene_update(trajectory(:, shortest_path_index), tau, shortest_path, no_cities, alpha, trajectory(1, shortest_path_index) );
     %-----------------------------------------------------
 
+
     %Vergleiche den kürzesten Pfad dieser Runde mit dem kürzesten Pfad von allen    
     if shortest_path < global_shortest_path 
 
         global_shortest_path = shortest_path;
+        global_shortest_trajectory = trajectory (shortest_path_index);
 
     end %if shortest path Vergleich
 
     
 
-    if mod(ii,50) == 0                                                  %Ausgabe global_shortest_path nach jeder 20. round
+% 
 
-       global_shortest_path
-
-    end %if Ausgabe von global_shortest_path
+%     if mod(ii,50) == 0                                                  %Ausgabe global_shortest_path nach jeder 50. round
+% 
+%        global_shortest_path
+% 
+%     end %if Ausgabe von global_shortest_path
     
 end %for ii, über die rounds
-global_shortest_path
+
+global_shortest_path;
+
+trajectory(:, shortest_path_index);
+    tau_bild = tau;
 

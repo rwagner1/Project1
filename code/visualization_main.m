@@ -9,7 +9,7 @@ function[global_shortest_path, tau_bild]= main_main_agents_together(alpha, beta_
 no_cities = length (data_set(:,1));					        %LÃ¤nge der ersten Spalte der Matrix auslesen
 
 
-coord = importdata('ulysses16.txt',' ',7);
+coord = importdata('oliver30.txt',' ',9);
 coord = coord.data
 
 %Memory der Ameise, Matrix mit Anzahl StÃ¤dten x Anzahl Agents
@@ -26,7 +26,6 @@ start_city = zeros(no_agents,1);                            %Start_city ist für 
 farbe = ['g' 'r' 'b' 'k' 'y' 'c' 'ma'];
 
 
-global_shortest_path = L_nn;                                %Globaler shortest_path vergleicht shortest_path's von allen gegangenen rounds
 
 
 %-------------------------------------------------------------------------------
@@ -36,6 +35,9 @@ global_shortest_path = L_nn;                                %Globaler shortest_p
 
 for ii = 1:rounds
     
+    
+    global_shortest_path = L_nn;                                %Globaler shortest_path vergleicht shortest_path's von allen gegangenen rounds
+
          plot(coord(:,2), coord(:,3), 'k*')
          hold on
  
@@ -160,6 +162,7 @@ for ii = 1:rounds
 %     end %if Ausgabe von global_shortest_path
     
     hold off
+    global_shortest_path
 end %for ii, über die rounds
 global_shortest_path;
 trajectory(:, shortest_path_index);

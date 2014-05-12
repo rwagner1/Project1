@@ -15,7 +15,7 @@ function[data_set] = coordinates(koordinaten)
 
 		for jj = (haupt+1):no_cities
 
-			data_set(haupt, jj) = round(sqrt( (koordinaten(haupt, 2) - koordinaten(jj, 2))^2 + (koordinaten(haupt, 3) - koordinaten(jj, 3))^2 ));
+			data_set(haupt, jj) = sqrt( (koordinaten(haupt, 2) - koordinaten(jj, 2))^2 + (koordinaten(haupt, 3) - koordinaten(jj, 3))^2 );
 
 		end %for jj
 

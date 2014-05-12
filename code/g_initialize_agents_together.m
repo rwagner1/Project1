@@ -20,15 +20,17 @@ close all
 %      else
 %         disp(['User selected ', fullfile(pathname, filename)])
 %         delimiterIn = ' ';
-%         headerlinesIn = 6;
+%         headerlinesIn = 9;
 %         cities = importdata(filename,delimiterIn,headerlinesIn);
 %         data_set = coordinates(cities.data);
 %        
 %      end
-
-
-        cities = importdata('pla85900.txt',' ',6);
+     
+        cities = importdata('eil51.txt',' ',6);
         data_set = coordinates(cities.data);
+
+
+
 
 %Citydaten einlesen (obere linke Dreiecksmatrix, zb city bayg29)
 % [filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
@@ -62,15 +64,13 @@ close all
  
 alpha = 0.1;
 beta_0 = 2;
-no_agents = 4; 										%Wieviele Agents haben wir
-
-rounds = 200;											%Wieviele DurchgÃ¤nge
-
-start_city = 1;											%Bei welcher Stadt startet der Agent
+no_agents = 10; 										%Wieviele Agents haben wir
+rounds = 2000;											%Wieviele DurchgÃ¤nge
 q0 = 0.9;
-tau_init = 0.004;                                         %Pheromonmenge am Anfang
+tau_init = 0.1;                                         %Pheromonmenge am Anfang
 
 
+V = 2;
 
 
 %------------------------
@@ -78,19 +78,19 @@ tau_init = 0.004;                                         %Pheromonmenge am Anfa
 %------------------------
 
 
-runs = 1;                                               %shortest_path wird über Anzahl runs gemittelt
+runs = 10;                                               %shortest_path wird über Anzahl runs gemittelt
 global_shortest_path = zeros(runs,1);
 %Fülle Vektor mit shortest_path für jeden Run
 for ii=1:runs
-    [global_shortest_path(ii),tau_bild] = visualization_main(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init);
+    [global_shortest_path(ii),tau_bild, global_shortest_trajectory] = g_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init);
 end
 
 
-rounds
+disp('eil51')
 global_shortest_path
-
+global_shortest_trajectory
 global_shortest_path_average = sum(global_shortest_path)/runs         %Gemittelter shortest_path
 errors = std(global_shortest_path)  %Standardabweichung shortest_path
-
+figure
 
 %------------------------
