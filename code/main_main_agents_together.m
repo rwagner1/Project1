@@ -15,7 +15,7 @@ tau = zeros (no_cities) + tau_init;							%tau als pheromenin-matrix mit dimensi
 
 %Berechnen von L_nn, benötigt für tau0
 
-L_nn = calc_Lnn(data_set, no_cities, 1);						%Function calc_Lnn aufrufen um L_nn zu berechnen
+L_nn = calc_Lnn(data_set, no_cities, 1)						%Function calc_Lnn aufrufen um L_nn zu berechnen
 tau0 = 1/(no_cities*L_nn);
 
 start_city = zeros(no_agents,1);                            %Start_city ist f�r jeden Agent unterschiedlich
