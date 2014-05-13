@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Abstract}{4}
+\contentsline {section}{\numberline {2}Individual contributions}{4}
+\contentsline {subsection}{\numberline {2.1}Raphaela Wagner}{4}
+\contentsline {subsection}{\numberline {2.2}Giandrin Barandun}{4}
+\contentsline {section}{\numberline {3}Introduction and Motivations}{4}
+\contentsline {section}{\numberline {4}Description of the Model}{6}
+\contentsline {subsection}{\numberline {4.1}Choosing a City}{6}
+\contentsline {subsection}{\numberline {4.2}Moving Forward and Updating}{7}
+\contentsline {section}{\numberline {5}Implementation}{7}
+\contentsline {subsection}{\numberline {5.1}Main program}{7}
+\contentsline {subsection}{\numberline {5.2}Choose the Next City}{8}
+\contentsline {section}{\numberline {6}Simulation Results and Discussion}{8}
+\contentsline {subsection}{\numberline {6.1}Length of shortest tour}{8}
+\contentsline {subsection}{\numberline {6.2}Model adaptions}{12}
+\contentsline {section}{\numberline {7}Summary and Outlook}{12}
+\contentsline {section}{\numberline {8}References}{12}

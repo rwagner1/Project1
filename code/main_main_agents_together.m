@@ -152,9 +152,7 @@ for ii = 1:rounds
 %     end %if Ausgabe von global_shortest_path
     
 end %for ii, über die rounds
-
-global_shortest_path;
-
-trajectory(:, shortest_path_index);
+global_shortest_path
+trajectory(:, shortest_path_index)
     tau_bild = tau;
 

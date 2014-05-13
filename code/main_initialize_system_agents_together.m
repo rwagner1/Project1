@@ -1,8 +1,8 @@
 %Hauptfunktion zum Wählen der Parameter und einlesen der Matrix mit Daten der Städte und Strecken
 
 %Füge Pfade zu den Datensätzen dazu (ANPASSEN!)
-addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
-%addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
+%addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
+addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
 
 %Städtedaten einlesen
 %cities.data = links obere Dreiecksmatrix mit Dimension: (no_cities-1) x
@@ -13,21 +13,21 @@ clc
 close all
 
 %Citydaten einlesen (2D euklidische Distanzen) 
-% [filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
-%      if isequal(filename, 0)
-%         disp('User selected ''Cancel''')
-%         
-%      else
-%         disp(['User selected ', fullfile(pathname, filename)])
-%         delimiterIn = ' ';
-%         headerlinesIn = 9;
-%         cities = importdata(filename,delimiterIn,headerlinesIn);
-%         data_set = coordinates(cities.data);
-%        
-%      end
-     
-        cities = importdata('eil51.txt',' ',6);
+[filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
+     if isequal(filename, 0)
+        disp('User selected ''Cancel''')
+        
+     else
+        disp(['User selected ', fullfile(pathname, filename)])
+        delimiterIn = ' ';
+        headerlinesIn = 6;
+        cities = importdata(filename,delimiterIn,headerlinesIn);
         data_set = coordinates(cities.data);
+       
+     end
+     
+%        cities = importdata('eil51.txt',' ',6);
+%        data_set = coordinates(cities.data);
 
 
 
@@ -63,7 +63,7 @@ close all
      
  
 alpha = 0.1;
-beta_0 = 6;
+beta_0 = 2;
 no_agents = 10; 										%Wieviele Agents haben wir
 rounds = 2000;											%Wieviele DurchgÃ¤nge
 
@@ -79,7 +79,7 @@ V = 2;
 %------------------------
 
 
-runs = 20;                                               %shortest_path wird über Anzahl runs gemittelt
+runs = 10;                                               %shortest_path wird über Anzahl runs gemittelt
 global_shortest_path = zeros(runs,1);
 %Fülle Vektor mit shortest_path für jeden Run
 for ii=1:runs
@@ -88,13 +88,10 @@ end
 
 
 V
-beta_0
-
-
+rounds
 disp('eil51')
-
 global_shortest_path
-global_shortest_trajectory
+global_shortest_trajectory;
 global_shortest_path_average = sum(global_shortest_path)/runs         %Gemittelter shortest_path
 errors = std(global_shortest_path)  %Standardabweichung shortest_path
 figure
