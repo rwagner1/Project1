@@ -18,7 +18,7 @@ plot(q0,global_shortest_path_average,type="n",
      xlim=c(0,1),
      ylim=c(400,500),
      xlab=expression(paste(q[0])),
-     ylab=expression(paste("shortest path"," / ", a.u.)),
+     ylab=expression(paste("<shortest path>"," / ", a.u.)),
      
 )
 

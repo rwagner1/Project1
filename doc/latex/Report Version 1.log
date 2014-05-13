@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.29)  10 MAY 2014 16:37
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.29)  13 MAY 2014 14:14
 entering extended mode
 **Report*Version*1.tex
 
@@ -211,20 +211,219 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
+(C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\mcode.sty
+-- Package: `mcode' 2.3 <2012/08/31> --
+Package: mcode 2012/08/31 2.3
+ - settings optimized for display (colour formating)
+ - line numbering enabled
+ - literate programming (character replacements) enabled
+ - automatic line breaking enabled (careful, buggy!)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count104
+\lst@gtempboxa=\box28
+\lst@token=\toks22
+\lst@length=\count105
+\lst@currlwidth=\dimen122
+\lst@column=\count106
+\lst@pos=\count107
+\lst@lostspace=\dimen123
+\lst@width=\dimen124
+\lst@newlines=\count108
+\lst@lineno=\count109
+\lst@maxwidth=\dimen125
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
+\c@lstnumber=\count110
+\lst@skipnumbers=\count111
+\lst@framebox=\box29
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2014/03/04 1.5c listings configuration
+))
+Package: listings 2014/03/04 1.5c (Carsten Heinz)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+)
+\lbreakdots=\box30
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 220.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
+Package: pdfpages 2012/08/31 v0.4t Insert pages of external PDF documents (AM)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count112
+\calc@Bcount=\count113
+\calc@Adimen=\dimen126
+\calc@Bdimen=\dimen127
+\calc@Askip=\skip48
+\calc@Bskip=\skip49
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count114
+\calc@Cskip=\skip50
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
+File: pppdftex.def 2012/08/31 v0.4t Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box31
+\AM@toc@title=\toks23
+\c@AM@survey=\count115
+\AM@templatesizebox=\box32
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks24
+\verbatim@line=\toks25
+\verbatim@in@stream=\read1
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count116
+\float@exts=\toks26
+\float@box=\box33
+\@float@everytoks=\toks27
+\@floatcapt=\box34
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\sidecap\sidecap.sty"
+Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
+\SC@BOXWD=\dimen128
+\SC@CAPWD=\dimen129
+\SC@tempdima=\dimen130
+\SC@tempdimb=\dimen131
+\c@SC@C=\count117
+\SC@BOX=\box35
+)
 ("C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Report Ver
 sion 1.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 33.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 33.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -262,18 +461,45 @@ LaTeX Font Info:    ... okay on input line 16.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count104
-\scratchdimen=\dimen122
-\scratchbox=\box28
-\nofMPsegments=\count105
-\nofMParguments=\count106
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count107
-\MPscratchDim=\dimen123
-\MPnumerator=\count108
-\makeMPintoPDFobject=\count109
-\everyMPtoPDFconversion=\toks23
-) (C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\cover.tex
+\scratchcounter=\count118
+\scratchdimen=\dimen132
+\scratchbox=\box36
+\nofMPsegments=\count119
+\nofMParguments=\count120
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count121
+\MPscratchDim=\dimen133
+\MPnumerator=\count122
+\makeMPintoPDFobject=\count123
+\everyMPtoPDFconversion=\toks29
+)
+\c@lstlisting=\count124
+\AtBeginShipoutBox=\box37
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ms\ragged2e.sty"
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ms\everysel.sty"
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 126.
+)
+\CenteringLeftskip=\skip51
+\RaggedLeftLeftskip=\skip52
+\RaggedRightLeftskip=\skip53
+\CenteringRightskip=\skip54
+\RaggedLeftRightskip=\skip55
+\RaggedRightRightskip=\skip56
+\CenteringParfillskip=\skip57
+\RaggedLeftParfillskip=\skip58
+\RaggedRightParfillskip=\skip59
+\JustifyingParfillskip=\skip60
+\CenteringParindent=\skip61
+\RaggedLeftParindent=\skip62
+\RaggedRightParindent=\skip63
+\JustifyingParindent=\skip64
+)
+(C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\cover.tex
 Package epstopdf Info: Source file: <ETHlogo.eps>
 (epstopdf)                    date: 2008-01-16 19:52:14
 (epstopdf)                    size: 179075 bytes
@@ -284,6 +510,7 @@ Package epstopdf Info: Source file: <ETHlogo.eps>
 f ETHlogo.eps>
 (epstopdf)             \includegraphics on input line 5.
 Package epstopdf Info: Output file is already uptodate.
+
 <ETHlogo-eps-converted-to.pdf, id=1, 179.67125pt x 45.16875pt>
 File: ETHlogo-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -303,84 +530,313 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Giandrin/Documen
 ts/GitHub/Solving-TSP-using-ACS/doc/latex/ETHlogo-eps-converted-to.pdf>]
-Overfull \hbox (5.3226pt too wide) in paragraph at lines 42--60
+Overfull \hbox (5.3226pt too wide) in paragraph at lines 59--77
  [] 
  []
 
-[2]
+[2] <DecOfOriginality.pdf, id=17, page=1, 595.22375pt x 842.14626pt>
+File: DecOfOriginality.pdf Graphic file (type pdf)
+
+<use DecOfOriginality.pdf, page 1>
+Package pdftex.def Info: DecOfOriginality.pdf, page1 used on input line 89.
+(pdftex.def)             Requested size: 595.2223pt x 842.14421pt.
+File: DecOfOriginality.pdf Graphic file (type pdf)
+ <use DecOfOriginality.pdf, page 1>
+Package pdftex.def Info: DecOfOriginality.pdf, page1 used on input line 89.
+(pdftex.def)             Requested size: 561.97174pt x 795.09999pt.
+File: DecOfOriginality.pdf Graphic file (type pdf)
+
+<use DecOfOriginality.pdf, page 1>
+Package pdftex.def Info: DecOfOriginality.pdf, page1 used on input line 89.
+(pdftex.def)             Requested size: 561.97174pt x 795.09999pt.
+File: DecOfOriginality.pdf Graphic file (type pdf)
+ <use DecOfOriginality.pdf, page 1>
+Package pdftex.def Info: DecOfOriginality.pdf, page1 used on input line 89.
+(pdftex.def)             Requested size: 561.97174pt x 795.09999pt.
+File: DecOfOriginality.pdf Graphic file (type pdf)
+
+<use DecOfOriginality.pdf, page 1>
+Package pdftex.def Info: DecOfOriginality.pdf, page1 used on input line 89.
+(pdftex.def)             Requested size: 561.97174pt x 795.09999pt.
+ [3 <C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/doc/latex/DecOfOr
+iginality.pdf, page is rotated 180 degrees>]
 ("C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Report Ver
 sion 1.toc")
 \tf@toc=\write3
- [3]
-Overfull \hbox (88.2608pt too wide) in paragraph at lines 94--96
+ [4]
+Overfull \hbox (88.2608pt too wide) in paragraph at lines 114--116
 \OT1/cmr/m/n/12 The codes for the func-tions "prob[]dist.m", "calc[]Lnn.m", "ch
 oose[]city.m", "main[]initialize[]system.m",
  []
 
 
 (C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Introductio
-n.tex [4] <ants.png, id=21, 420.82219pt x 282.30469pt>
-File: ants.png Graphic file (type png)
- <use ants.png>
-Package pdftex.def Info: ants.png used on input line 9.
-(pdftex.def)             Requested size: 312.98315pt x 170.71947pt.
+n.tex [5] <Plots/Ants.png, id=48, 259.7203pt x 375.65344pt>
+File: Plots/Ants.png Graphic file (type png)
+
+<use Plots/Ants.png>
+Package pdftex.def Info: Plots/Ants.png used on input line 9.
+(pdftex.def)             Requested size: 215.0023pt x 310.9726pt.
 
 
-Package natbib Warning: Citation `paper' on page 5 undefined on input line 15.
+Package natbib Warning: Citation `paper' on page 6 undefined on input line 14.
 
-
-Package natbib Warning: Citation `paper' on page 5 undefined on input line 16.
-
-
-Package natbib Warning: Citation `paper' on page 5 undefined on input line 16.
-
-)
-Overfull \hbox (9.02892pt too wide) in paragraph at lines 15--99
-\OT1/cmr/m/n/12 (\OT1/cmr/m/it/12 http://www.iwr.uni-heidelberg.de/groups/comop
-t/software/TSPLIB95/tsp/\OT1/cmr/m/n/12 ) and cor-
- []
-
-[5 <C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/doc/latex/ants.png
->]
+) [6 <C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/doc/latex/Plots/
+Ants.png>]
 (C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Description
 .tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
-[6])
+[7] [8])
 (C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Implementat
-ion.tex [7])
+ion.tex) [9]
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+[10]
+(C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/main_initialize_
+system_agents_together.m
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 4.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 4.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omspcr.fd"
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+ [11]
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+ [12])
+(C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/main_main_agents
+_together.m
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¶ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¼ in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+ [13]
+Overfull \hbox (1.99977pt too wide) in paragraph at lines 29--30
+[][][][][][][][][]  
+ []
+
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+
+Overfull \hbox (1.99977pt too wide) in paragraph at lines 31--34
+[][][][][][][][][]  
+ []
+
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+[14]
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+LaTeX Font Info:    Try loading font information for OML+pcr on input line 72.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omlpcr.fd"
+File: omlpcr.fd 
+)
+LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <9> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 72.
+Missing character: There is no ü in font pcrr7t!
+ [15]
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+
+[16]
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+)
+(C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/coordinates.m
+[17]) (C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/calc_Lnn.m
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¼ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¼ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+[18]
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+Missing character: There is no Ã in font pcrr7t!
+Missing character: There is no ¤ in font pcrr7t!
+
+Overfull \hbox (223.40184pt too wide) in paragraph at lines 30--31
+[][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (232.60173pt too wide) in paragraph at lines 30--31
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (248.8019pt too wide) in paragraph at lines 30--31
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (243.40184pt too wide) in paragraph at lines 30--31
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (238.00179pt too wide) in paragraph at lines 30--31
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (275.80217pt too wide) in paragraph at lines 30--31
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (216.40175pt too wide) in paragraph at lines 30--31
+[][][][][]  
+ []
+
+) (C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/choose_city.m
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+
+[19]
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ö in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+ [20]
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+) (C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/eta.m) (C:/Use
+rs/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/prob_dist.m
+[21]
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+ [22])
+(C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/global_pheromene
+_update.m
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+Missing character: There is no ü in font pcrr7t!
+Missing character: There is no ä in font pcrr7t!
+
+Overfull \hbox (38.19994pt too wide) in paragraph at lines 15--17
+[][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (38.19994pt too wide) in paragraph at lines 18--20
+[][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (0.39955pt too wide) in paragraph at lines 26--27
+[][][][][][][][][][][][][][][][][][][]  
+ []
+
+)
 
 Package natbib Warning: There were undefined citations.
 
-[8]
+[23]
 ("C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\doc\latex\Report Ver
 sion 1.aux") ) 
 Here is how much of TeX's memory you used:
- 3233 strings out of 493921
- 44203 string characters out of 3144867
- 107318 words of memory out of 3000000
- 6465 multiletter control sequences out of 15000+200000
- 12457 words of font info for 48 fonts, out of 3000000 for 9000
+ 6677 strings out of 493921
+ 95872 string characters out of 3144867
+ 241892 words of memory out of 3000000
+ 9789 multiletter control sequences out of 15000+200000
+ 16079 words of font info for 62 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 42i,10n,26p,965b,276s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
-i12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "Report Version 1.pdf" (8 pages, 209548 bytes).
+ 42i,18n,45p,965b,1529s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.en
+c}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/symbols/msam10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/urw/courier/ucrr8a.pfb>
+Output written on "Report Version 1.pdf" (23 pages, 416287 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
+ 179 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
