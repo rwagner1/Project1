@@ -34,7 +34,7 @@ y.errorbars(rounds,global_shortest_path_average,errors)
 abline(h=420,lty=2)
 points(rounds,global_shortest_path_average,cex=0.8,pc=21,bg="white")
 #legend(1000,550,c(expression(paste(alpha," = ",0.1)),expression(paste(beta," = ",2)),expression(paste(no_agents," = ",10)),expression(paste(q0," = ",0.9)),expression(paste(tau_init," = ",0.1)),expression(paste(L_nn," = ",513.61))))
-legend(650,550,lty=c(2,NA),c("Optimal Tour Length"),bty="n")
+legend(400,550,lty=c(2,NA),c("ACS best result and Average from [3]"),bty="n")
 
 
 dev.copy2pdf(file="rounds_vs_shortestpath_oli.pdf",height=7,width=12)

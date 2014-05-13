@@ -43,15 +43,16 @@ y.errorbars.V2(rounds,global_shortest_path_average.V2,errors.V2)
 y.errorbars.V3 <- function(rounds,global_shortest_path_average.V3,errors.V3,ebl=0.02){arrows(rounds,global_shortest_path_average.V3-errors.V3,rounds,global_shortest_path_average.V3+errors.V3,code=3,angle=90,length=ebl)}
 y.errorbars.V3(rounds,global_shortest_path_average.V3,errors.V3)
 
-abline(h=426,lty=2)
-legend(1400,520,pch=c(21,22,23),pt.bg=c("white","red","green"),c("Model modified","Model paper",expression(paste(tau[start],"  modified"))),bty="n")
-legend(1400,490,lty=c(2,NA),c("Optimal Tour Length"),bty="n")
+abline(h=429,lty=2)
+abline(h=433.87, lty=3)
+legend(1400,520,pch=c(21,22,23),pt.bg=c("white","red","green"),c("Model from [1]","Model modified",expression(paste(tau(r,u),"  modified"))),bty="n")
+legend(1200,490,lty=c(3,2),c("ACS Average from [1]","ACS best result from [1]"),bty="n")
 
-points(rounds,global_shortest_path_average.V1,cex=1,pc=21,bg="white")
-points(rounds,global_shortest_path_average.V2,cex=0.8,pc=22,bg="red")
-points(rounds,global_shortest_path_average.V3,cex=0.8,pc=23,bg="green")
+points(rounds,global_shortest_path_average.V1,cex=1,pc=22,bg="red")
+points(rounds,global_shortest_path_average.V2,cex=1,pc=21,bg="white")
+points(rounds,global_shortest_path_average.V3,cex=1,pc=23,bg="green")
 
 #legend(1600,550,c(expression(paste(alpha," = ",0.1)),expression(paste(beta," = ",2)),expression(paste(no_agents," = ",10)),expression(paste(q0," = ",0.9)),expression(paste(tau_init," = ",0.1)),expression(paste(L_nn," = ",513.61))))
 
 
-dev.copy2pdf(file="rounds_vs_shortestpath_eil.pdf",height=7,width=12)
+#dev.copy2pdf(file="rounds_vs_shortestpath_eil.pdf",height=7,width=12)
