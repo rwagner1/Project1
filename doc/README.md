@@ -1,5 +1,10 @@
 # Doc Folder
+------------------------------------------------------------------------------
+##Latex
 
-Your project report goes here. It is mandatory to use one of the templates (latex or word) that you find herein.
+All the stuff used to write the report, like graphs, packages and pictures are collected 
+in the folder 'Latex'
 
-Save the final report as report.pdf
+##Final Report
+
+The final report can be found under the name 'report.pdf'

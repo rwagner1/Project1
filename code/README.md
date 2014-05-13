@@ -1,13 +1,39 @@
 # Code Folder 
 --------------------------------------------------------------------------
-allgemeine Info
+##Used codes
 
-tau ist lower triangle matrix, das heisst die "höhere" Stadt muss an zweiter Stelle stehen
+Most of the codes in this folder have been written for testing other codes or models. 
+The main codes which were used throughout the project are the following:
 
---------------------------------------------------------------------------
-Zu 'choose_city.m'
+The main program: 
 
-k ist input welcher Agent und M_k das Gedächtnis der Agents mit Spalten
-für verschiedene Agents und Zeilen für verschiedene Cities (M_k[city, agent])
-!wobei gilt M_k = 1 heisst nicht besucht!
---------------------------------------------------------------------------
+'main_initialize_system_agents_together.m'
+
+The main function:
+
+'main_main_agents_together.m'
+
+Bring a matrix with city coordinates into a distancematrix
+
+'coordinates.m'
+
+Calculate the nearest neighbour heuristic distance L_nn
+
+'calc_Lnn.m'
+
+Function eta
+
+'eta.m'
+
+Choose a city
+
+'choose_city.m'
+
+Calculate the probability p_k
+
+'prob_dist.m'
+
+Update the pheromone globally
+
+'global_pheromene_update.m'
+
