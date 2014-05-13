@@ -1,7 +1,7 @@
 %Hauptfunktion
 %alle agents werden zu Beginn zufällig auf Städte verteilt und bewegen sich dann gleichzeitig Schritt für Schritt
 
-function[global_shortest_path, tau_bild, global_shortest_trajectory]= main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init)
+function[first_round]= first_occurance_main(alpha, beta_0, no_agents, data_set, q0, tau_init, solution)
 
 
 
@@ -19,6 +19,8 @@ L_nn = calc_Lnn(data_set, no_cities, 1);						%Function calc_Lnn aufrufen um L_n
 tau0 = 1/(no_cities*L_nn);
 
 start_city = zeros(no_agents,1);                            %Start_city ist für jeden Agent unterschiedlich
+rounds = 1;                                                 %iniziere Zählvariable
+occurance = 0;                                              %iniziere Testvariable
 
 
 
@@ -31,7 +33,8 @@ global_shortest_path = L_nn;                                %Globaler shortest_p
 %-------------------------------------------------------------------------------
 
 
-for ii = 1:rounds
+
+while(occurance == 0)
     
     trajectory = zeros(no_cities, no_agents);                           %trajectory Matrix inizieren
     current_city = zeros(no_agents, 1);                                 %current_city Vektor inizieren
@@ -137,24 +140,22 @@ for ii = 1:rounds
     if shortest_path < global_shortest_path 
 
         global_shortest_path = shortest_path;
-        global_shortest_trajectory = trajectory (shortest_path_index);
+        rounds;
 
     end %if shortest path Vergleich
 
     
+    if (global_shortest_path == solution)
 
-% 
+        first_round = rounds;
+        occurance = 1;
 
-%     if mod(ii,50) == 0                                                  %Ausgabe global_shortest_path nach jeder 50. round
-% 
-%        global_shortest_path
-% 
-%     end %if Ausgabe von global_shortest_path
+    end %if
+
+    rounds = rounds + 1;
+
     
-end %for ii, über die rounds
+end %while
 
-global_shortest_path;
 
-trajectory(:, shortest_path_index);
-    tau_bild = tau;
 
