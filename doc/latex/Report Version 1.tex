@@ -9,6 +9,23 @@
 \usepackage{amssymb, amsmath}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
+%package zum einbinden von Matlab-files
+\usepackage[numbered,autolinebreaks,useliterate]{mcode}
+%package zum einbinden ganzer pdfseiten
+\usepackage{pdfpages} 
+
+
+
+%Zeug von Bachelorarbeit
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{float}
+
+\usepackage[rightcaption]{sidecap}
+
+\newenvironment{myfig}{\SC@float[c]{figure}}{\endSC@float} %caption zentr./seitl.
+%---------------------------
+
 %\title{Title}
 %\author{Name 1, Name 2}
 %\date{date} 
@@ -69,6 +86,9 @@
 % IMPORTANT
 % you MUST include the ETH declaration of originality here; it is available for download on the course website or at http://www.ethz.ch/faculty/exams/plagiarism/index_EN; it can be printed as pdf and should be filled out in handwriting
 
+\includepdf{DecOfOriginality.pdf}
+
+\newpage
 
 %%%%%%%%%% Table of content %%%%%%%%%%%%%%%%%
 
@@ -96,6 +116,7 @@ The codes for the functions "prob\_dist.m", "calc\_Lnn.m", "choose\_city.m", "ma
 
 \section{Introduction and Motivations}
 \input{Introduction}
+
 \section{Description of the Model}
 \label{sec:model}
 \input{Description}
@@ -103,11 +124,55 @@ The codes for the functions "prob\_dist.m", "calc\_Lnn.m", "choose\_city.m", "ma
 \section{Implementation}
 \input{Implementation}
 \section{Simulation Results and Discussion}
+%\input{Results1}
 \label{sec:results}
 
 \section{Summary and Outlook}
 
 \section{References}
+
+\begin{itemize}
+
+\item[$^{[1]}$] \textit{Ant Colonies for the Travelling Salesman Problem}; Marco Dorigo, Luca Maria Gambardella; Lugano, Switzerland; 24.10.1996\\
+\item[$^{[2]}$] \textit{https://www.iwr.uni-heidelberg.de/groups/comopt/software/TSPLIB95/}
+
+\end{itemize}
+
+\newpage
+
+\section*{Appendix}
+
+\subsection*{Main Program}
+
+\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/main_initialize_system_agents_together.m} 
+
+\subsection*{Main Function}
+\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/main_main_agents_together.m} 
+
+\subsection*{Coordinates to Distancematrix}
+
+\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/coordinates.m} 
+
+\subsection*{Calculate Nearest Neighbour Heuristic Distance}
+
+\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/calc_Lnn.m} 
+
+\subsection*{Choose a City Function}
+
+\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/choose_city.m} 
+
+\subsection*{Calculate the $\eta$-Function}
+
+\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/eta.m} 
+
+
+\subsection*{Probability $p_k$}
+
+\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/prob_dist.m} 
+
+\subsection*{Update Pheromone Globally}
+
+\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/global_pheromene_update.m} 
 
 
 
