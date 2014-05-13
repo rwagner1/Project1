@@ -2,11 +2,11 @@
 
 %Füge Pfade zu den Datensätzen dazu (ANPASSEN!)
 %addpath('C:\Users\Giandrin\Documents\GitHub\Solving-TSP-using-ACS\other');
-addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
+%addpath('C:\Users\Raphaela Wagner\Documents\GitHub\Solving-TSP-using-ACS\other');
 
 %Städtedaten einlesen
-%cities.data = links obere Dreiecksmatrix mit Dimension: (no_cities-1) x
-%(no_cities-1) mit Diagonaleinträgen
+%cities.data = rechte obere Dreiecksmatrix mit Dimension: no_cities x no_cities ohne Diagonaleinträgen
+%Der Eintrag i,j entspricht der Distanz zwischen Stadt i und j
 
 clear all
 clc
@@ -26,13 +26,8 @@ close all
        
      end
      
-%        cities = importdata('eil51.txt',' ',6);
-%        data_set = coordinates(cities.data);
 
-
-
-
-%Citydaten einlesen (obere linke Dreiecksmatrix, zb city bayg29)
+%Citydaten einlesen (falls Distanzangaben in Matrixform)
 % [filename, pathname] = uigetfile('*.txt', 'Please select a city environment');
 %      if isequal(filename, 0)
 %         disp('User selected ''Cancel''')
@@ -61,39 +56,32 @@ close all
 %      end
 
      
- 
-alpha = 0.1;
-beta_0 = 2;
-no_agents = 10; 										%Wieviele Agents haben wir
-rounds = 2000;											%Wieviele DurchgÃ¤nge
-
-q0 = 0.9;
+%Setze Parameter
+alpha = 0.1;                                            %Updaterate
+beta_0 = 2;                                             %Gewichtung Pheromon und Nähe der Städte
+no_agents = 10; 										%Anzahl Ameisen=agents
+rounds = 2000;											%Anzahl Durchgänge von allen agents ausgeführt
+q0 = 0.9;                                               %Wahrscheinlichkeit einen Pfad nach Pheromongehalt auszuwählen
 tau_init = 0.1;                                         %Pheromonmenge am Anfang
-
-
-V = 2;
-
+version = 2;                                            %Programmversion                                                
 
 %------------------------
 %Starte die Hauptfunktion
 %------------------------
 
+runs = 10;                                              %shortest_path wird über Anzahl runs gemittelt
+global_shortest_path = zeros(runs,1);                   %Vektor für runs verschiedene gefundene shortest_path
 
-runs = 10;                                               %shortest_path wird über Anzahl runs gemittelt
-global_shortest_path = zeros(runs,1);
-%Fülle Vektor mit shortest_path für jeden Run
+
+%Fülle Vektor mit shortest_path für jeden run
 for ii=1:runs
-    [global_shortest_path(ii),tau_bild, global_shortest_trajectory] = main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init);
+    [global_shortest_path(ii),tau_bild] = main_main_agents_together(alpha, beta_0, no_agents, data_set, rounds, q0, tau_init);
 end
 
-
-V
-rounds
+%Ausgabe am Ende des Programms zur Strukturierung der Resultate
 disp('eil51')
 global_shortest_path
-global_shortest_trajectory;
-global_shortest_path_average = sum(global_shortest_path)/runs         %Gemittelter shortest_path
-errors = std(global_shortest_path)  %Standardabweichung shortest_path
-figure
+global_shortest_path_average = sum(global_shortest_path)/runs           %Gemittelter shortest_path
+errors = std(global_shortest_path)                                      %Standardabweichung shortest_path
 
 %------------------------

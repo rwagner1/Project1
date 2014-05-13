@@ -13,7 +13,7 @@ global_shortest_path_average = c(425.7000, 420.8000, 420.7000, 420.4000, 420.700
 error_shortest_path = c(3.1287, 0.6325, 0.4830, 0.5164, 0.6749, 1.7764, 3.8816, 6.9793, 6.3149, 7.3401, 7.3817, 8.4070)
 
 #Grafik
-par(family="serif",oma=c(0,1,0,0),mgp=c(2.9,1,0),mar=c(4,4.9,1,1),cex.lab=1.2,cex=1.2)
+par(family="serif",oma=c(0,1,0,0),mgp=c(2.9,1,0),mar=c(4,4.9,1,1),cex.lab=1.5,cex=1.5)
 plot(q0,global_shortest_path_average,type="n",
      xlim=c(0,1),
      ylim=c(400,500),
@@ -36,4 +36,4 @@ points(q0,global_shortest_path_average,cex=1,pc=23,
 #                   expression(paste(runs," =           ",10)),
 #                   expression(paste(tau[start]," =      ",0.001))))
 
-#dev.copy2pdf(file="q0_vs_shortestpath.pdf",height=7,width=12)
+dev.copy2pdf(file="q0_vs_shortestpath.pdf",height=8,width=12)

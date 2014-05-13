@@ -39,6 +39,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
+\thispagestyle{empty}
 \section*{Agreement for free-download}
 \bigskip
 
@@ -64,7 +65,7 @@
 \begin{minipage}{6cm}
 \vspace{2mm} \large Raphaela Wagner
 
- \vspace{\baselineskip}
+% \vspace{\baselineskip}
 
 \end{minipage}
 &
@@ -91,28 +92,28 @@
 \newpage
 
 %%%%%%%%%% Table of content %%%%%%%%%%%%%%%%%
-
+\thispagestyle{empty}
 \tableofcontents
 
 \newpage
+\setcounter{page}{1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \section{Abstract}
-
+On the following pages a model which solves the travelling salesman problem (TSP) by using an artificial ant colony (ASC) is reconstructed from a paper and explained to the reader. A few modifications to the model were made and the dependence of the model on different parameter was tested. The optimal solution to the TSP was found for all tested problems (30 and 51 city problems) after a reasonable number of rounds (500-2000) with this simple model.
 \section{Individual contributions}
 \subsection{Raphaela Wagner}
 With the aim of achieving a good model for solving the travelling salesman problem by the use of artificial ants Raphaela helped the group understanding the underlying paper and the included model. She contributed a great amount of explanations and ideas how to approach the whole project. \\
 In a second step she took care of how to implement the raw data from the TSP-library into MATLAB and transform it to a usable form. Further more she coded the functions "eta.m", "global\_pheromene\_update.m", "test\_funktionen.m" and "update.m" and helped improving and correcting the main program. \\
-After the code was written she did a lot of testing with different problem sets and compared the solution of the program to known solutions. 
-
+After the code was written she did a lot of testing with different problem sets and compared the solution of the program to known solutions. \\
 When the group got stuck and did not see a way out of a specific problem she was the one to bring along a hot chocolate and cheer the group up again.
 
 \subsection{Giandrin Barandun}
 The paper which is thought to be reconstructed on the following pages was selected and suggested to the group by Giandrin and during the whole process he tried to have some influence on the project with his wide technical understanding of the problem. \\
-The codes for the functions "prob\_dist.m", "calc\_Lnn.m", "choose\_city.m", "main\_initialize\_system.m", "coordinates.m" and "calc\_dist.m" are his contributions as well as the collaboration on the main program. He searched the internet for known TS-problems and their solutions and put all data in a readable form. A lion's share for the program working at the end was his bug fixing in all the functions and programs and combining them to the running model.
+The codes for the functions "prob\_dist.m", "calc\_Lnn.m", "choose\_city.m", "main\_init-ialize\_system\_agents\_together.m", "coordinates.m" and "calc\_dist.m" are his contributions as well as the collaboration on the main program. He searched the internet for known TS-problems and their solutions and put all data in a readable form. A lion's share for the program working at the end was his bug fixing in all the functions and programs and combining them to the running model.
 
 \section{Introduction and Motivations}
 \input{Introduction}
@@ -124,55 +125,42 @@ The codes for the functions "prob\_dist.m", "calc\_Lnn.m", "choose\_city.m", "ma
 \section{Implementation}
 \input{Implementation}
 \section{Simulation Results and Discussion}
-\input{resultsgiandrin}
-\input{ResultsRaphaela}
+\input{Results}
+
 \label{sec:results}
 \section{Summary and Outlook}
-
+\input{Summary}
+\newpage
 \section{References}
 
 \begin{itemize}
 
 \item[$^{[1]}$] \textit{Ant Colonies for the Travelling Salesman Problem}; Marco Dorigo, Luca Maria Gambardella; Lugano, Switzerland; 24.10.1996\\
 \item[$^{[2]}$] \textit{https://www.iwr.uni-heidelberg.de/groups/comopt/software/TSPLIB95/}
+\item[$^{[3]}$] \textit{http://stevedower.id.au/blog/research/oliver-30/}
 
 \end{itemize}
 
-\newpage
+
 
 \section*{Appendix}
 
-\subsection*{Main Program}
+\begin{figure}[H]
 
-\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/main_initialize_system_agents_together.m} 
+	\centering
+	\includegraphics[width=0.8\textwidth]{Plots/tauinit_vs_shortestpath.pdf}
 
-\subsection*{Main Function}
-\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/main_main_agents_together.m} 
+\caption{The shortest path the simulation found after 1200 rounds averaged over 10 trials for the problem \textit{eil51} is plotted against the initial tau put in the pheromone matrix. The figure shows no influence of this $\tau_{start}$ on the shortest path the simulation found neither on the error.}
+\label{fig:tauzushortestpath}
+\end{figure}
 
-\subsection*{Coordinates to Distancematrix}
-
-\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/coordinates.m} 
-
-\subsection*{Calculate Nearest Neighbour Heuristic Distance}
-
-\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/calc_Lnn.m} 
-
-\subsection*{Choose a City Function}
-
-\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/choose_city.m} 
-
-\subsection*{Calculate the $\eta$-Function}
-
-\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/eta.m} 
-
-
-\subsection*{Probability $p_k$}
-
-\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/prob_dist.m} 
-
-\subsection*{Update Pheromone Globally}
-
-\lstinputlisting{C:/Users/Giandrin/Documents/GitHub/Solving-TSP-using-ACS/code/global_pheromene_update.m} 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.9\linewidth]{rounds_needed_average_vs_shortestpath}
+\caption{To determine after how many rounds the shortest path is definitely found the program is adapted such that the for-loop over the number of rounds is replaced by a while loop. When the optimal tour length, known form previous calculations, is achieved three times in series the while loop is left. This plot shows the number of rounds needed to fulfil this criteria for different ant colony sizes. The values are averaged over ten trials and show a large spread. The bigger the error bars the more possible it is for agents to get stuck in a local minimal which does not correspond to the optimal tour. But due to the big uncertainties no direct correlation between the average time needed to find the shortest path and the number of agents can be made. However, the smallest number of rounds needed to find the solution in ten trials decreases for more than five agents.}
+\label{fig:speed}
+\end{center}
+\end{figure}
 
 
 
