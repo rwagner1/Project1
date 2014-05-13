@@ -25,14 +25,3 @@ At the time the first ant has finished the tour the second one can start while t
 \label{eq:globalupdate}
 \end{equation}
 This update is intended to give the edges along the shortest path a little head start in the following round. With this step the first round is complete and the second round can start.
-
-\subsection{Modifications}
-
-In the described model above every following ant waited its predecessor to finish the tour before it started its own tour. In the paper on which this report is based on the model was slightly different. The agents do not wait for the previous ones but start moving all together. After the first ant has chosen the next city it sits there until all agents have finished their first step and then step number two can begin and the ants choose the third city to go to. \\
-The difference to the model described before is that the edges get constantly locally updated and every agent feels the influence of the other agents currently being in the network. Whereas in the first model the second ant only sees the trace the first one left but not the ones of all agents still waiting at the first city and so on. \\
-Another small modification was to increase the award for the edges along the shortest tour. This means to add to $\tau$ (equation \ref{eq:globalupdate}) a constant amount of pheromone for the global update.
-
-\begin{equation}
-\tau(r,s) = (1-\alpha)\cdot \tau(r,s) + \alpha \Delta \tau(r,s)\textbf{ + 0.1}
-\label{eq:globalupdate2}
-\end{equation}

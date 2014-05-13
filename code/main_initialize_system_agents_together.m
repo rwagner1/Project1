@@ -63,12 +63,12 @@ close all
      
  
 alpha = 0.1;
-beta_0 = 2;
+beta_0 = 6;
 no_agents = 10; 										%Wieviele Agents haben wir
 rounds = 2000;											%Wieviele Durchgänge
 
 q0 = 0.9;
-tau_init = 0.001;                                         %Pheromonmenge am Anfang
+tau_init = 0.1;                                         %Pheromonmenge am Anfang
 
 
 V = 2;
@@ -87,7 +87,12 @@ for ii=1:runs
 end
 
 
+V
+beta_0
+
+
 disp('eil51')
+
 global_shortest_path
 global_shortest_trajectory
 global_shortest_path_average = sum(global_shortest_path)/runs         %Gemittelter shortest_path

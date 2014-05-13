@@ -155,6 +155,6 @@ end %for ii, über die rounds
 
 global_shortest_path;
 
-trajectory(:, shortest_path_index)
+trajectory(:, shortest_path_index);
     tau_bild = tau;
 

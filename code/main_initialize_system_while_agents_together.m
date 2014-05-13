@@ -60,8 +60,8 @@ close all
      
  
 alpha = 0.1;
-beta_0 = 2;
-no_agents = 25; 										%Wieviele Agents haben wir
+beta_0 = 6;
+no_agents = 2; 										%Wieviele Agents haben wir
 start_city = 1;											%Bei welcher Stadt startet der Agent
 q0 = 0.9;
 tau_init = 0.1;                                         %Pheromonmenge am Anfang
